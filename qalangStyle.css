@@ -50,3 +50,7 @@ pre.prettyprint{
 	font-size: medium;
 	line-height: 1.5em;
 }
+
+address:after{
+	content: "  <Chris\40Qalang.com>";
+}
