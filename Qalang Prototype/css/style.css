@@ -8,16 +8,17 @@ h4, h5, h6,
 h1, h2, h3 {margin-top: 0;}
 ul, ol {margin: 0;}
 p {margin: 0;}
+ul, menu, dir {
+	-webkit-padding-start: 0em;
+}
 html, body{
-	font-family: 'Vani', 'Georgia' serif;
+	font-family: "Vani", "Georgia", serif;
 	font-size: 100%;
-	background:#110424;
-	background: url(../images/banner.jpg) no-repeat center top;
+	background: #110424 url(../images/banner.jpg) no-repeat right top;
 	background-size: cover;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
-
 }
 body a{
 	transition: 0.5s all;
@@ -85,28 +86,64 @@ body a{
 	font-size: 	3em; 
     list-style: none;
 }
-div.light_container{
+div.container{
 	display: inline-block;
+
 }
 div.center{
-	position: relative;
+
 	text-align: center;
 }
+p.center{
 
+	text-align: center;
+}
 table {
   vertical-align:	top;
   border: 			none;
   margin-left:      0px;
-  margin-right:     20px;
+  margin-right:     0px;
   caption-side:     bottom;
   border-collapse:  collapse;
 }
-td {
+
+ul#about_qalang_characters li {
+	background-color: white;
+	margin-left: 5px;
+	margin-bottom: 5px;
+    width: 200px;
+	height: 500px;
+    display: inline-block;
+    vertical-align: top;
+	text-align: center;
+	
+}
+ul#about_qalang_characters p, h1, h2, h3, h4{
+	margin: 0px;
+	padding: 10px 10px 5px 10px;
+}	
+ul#about_qalang_characters p {
+	font-size: 0.75em;
+}
+td.splash_column_1 {
 	width: 30%;
 	text-align: left;
 	vertical-align : top;
 }	
+td.splash_column_2 {
+	width: 30%;
+	text-align: left;
+	vertical-align : top;
+}
+td.splash_column_3 {
+	width: 30%;
+	text-align: left;
+	vertical-align : top;
+}
 
+iframe {
+	border: 0px;
+}
 @media screen and (max-width:800px) {
 	.active {
         display: block;
@@ -123,7 +160,7 @@ td {
 		width: 95%;
 		position: absolute;
 		right: 2px;
-		background: #222;
+		background: #c92c27;
 		top:20px;
 		z-index: 111;
     }
@@ -167,6 +204,7 @@ td {
      	border-top:none;
      }
  }
+ /*
 ul.phone{
 	padding: 0;
 	margin: 17px 0 0 0;
@@ -189,6 +227,7 @@ ul.phone li p{
 	color: #6b9369;
 	font-size:0.85em;
 }
+*/
 .header_bottom{
 	margin-top:12em;
 	float: left;
@@ -283,7 +322,7 @@ ul.phone li p{
 	background: url(../images/img-sprite.png)no-repeat -35px -1px;
 	float: left;
 	margin-right:0.5em;
-	text-align: 	top;
+	vertical-align: 	top;
 }
 p.video_desc{
 	float: left;
@@ -399,7 +438,7 @@ span.m_1{
 }
 /*--footer--*/
 .footer{
-	background:#6b9369;
+	background:#110424;
 	padding:5em 0;
 }
 .footer_icon{
@@ -410,7 +449,7 @@ i.icon{
 	display: inline-block;
 	position: absolute;
 	top: -50px;
-	width: -50px%;
+	width: -50px;
 	left: 0;
 }
 ul.list1{
@@ -443,6 +482,7 @@ ul.list2{
 	margin:0;
 	list-style:none;
 }
+/*
 i.phone{
 	width: 20px;
 	height: 20px;
@@ -470,6 +510,7 @@ ul.list2 li.phone_desc p a{
 ul.list3{
 	margin-bottom:1em;
 }
+*/
 p.copy{
 	color:#C0D4E4;
 	font-size:0.85em;
@@ -479,8 +520,9 @@ p.copy a{
 	color:#fff;
 }
 /*--gallery--*/
+/* gallery header background jpg
 .gallery_header{
-	background: url(../images/qalang_banner.jpg) no-repeat center top;
+	background: url(../images/sunset_banner.jpg) no-repeat center center fixed;
 	background-size: cover;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -489,6 +531,7 @@ p.copy a{
 	padding-top: 1.5em;
 	text-align: center;
 }
+*/
 .gallery-tables{
 	padding:3em 0;
 }
@@ -605,7 +648,7 @@ a.order-btn:hover{
 	margin: 0 0 70px 0;
 }
 .heading span {
-	background: #f7f7f7;
+	background: #c92c27;
 	padding: 0 30px 0 0;
 	font-size:25px;
 	color: #333;
@@ -793,9 +836,11 @@ span.m_5{
 }
 /*--responsive design--*/
 @media (max-width:1280px){
+/*
 ul.phone {
 	width: 18.5555%;
-}	
+}
+*/	
 .logo {
 	width: 22%;
 	vertical-align: top;
@@ -826,10 +871,11 @@ ul.phone {
 }
 }
 @media (max-width:800px){
+/*
 ul.phone {
 	width: 23.5555%;
 }	
-
+*/
 .span_3 {
 	text-align: inherit;
 	margin-left: 0;
@@ -890,7 +936,7 @@ ul.service_box {
 .gallery-table-grid {
 	margin-bottom: 3em;
 }
-td.col_3{
+td.splash_column_3{
 	display:none;
 	width:0;
 	height:0;
@@ -916,6 +962,7 @@ td.col_3{
 }
 
 @media (max-width:640px){
+
 ul.phone {
 	width: 30.5555%;
 }	
@@ -955,7 +1002,7 @@ p.video_desc {
 	top: 35%;
 }
 
-td.col_1{
+td.splash_column_1{
 	display:none;
 	width:0;
 	height:0;
