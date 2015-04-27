@@ -58,10 +58,50 @@
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="icons/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
+	<meta property="fb:app_id" content="1405615266425022" /> 
+	<meta property="og:type"   content="website" />
+	<meta property="og:title" content="Halus is coming soon!" />	
+	<meta property="og:site_name" content="Qalang Studios"/>
+	<meta property="og:url"
+		content="http://qalang.com " />
+	<meta property="og:image"
+		content="http://qalang.com/images/qalang_logo_large.jpg"  />
+	<meta property="og:image:width" content="1500" />
+	<meta property="og:image:height" content="1500" />
+		
+<!--
+	<meta property="og:image"
+		content="http://qalang.com/images/banner.jpg"   />
+	<meta property="og:image"
+		content="http://qalang.com/images/halus_logo_large.png"   />
+-->
+	<meta property="og:description" content="It's a puzzle game and comic book, based on the Atayal folktale of Halus the Giant. Android, iOS beta: Summer 2015!" />
+	</head>
 
-</head>
-<body>
+	<body>
+		<script>
+		  window.fbAsyncInit = function() {
+			FB.init({
+			  appId      : '1405615266425022',
+			  xfbml      : true,
+			  version    : 'v2.3'
+			});
+		  };
 
+		  (function(d, s, id){
+			 var js, fjs = d.getElementsByTagName(s)[0];
+			 if (d.getElementById(id)) {return;}
+			 js = d.createElement(s); js.id = id;
+			 js.src = "//connect.facebook.net/en_US/sdk.js";
+			 fjs.parentNode.insertBefore(js, fjs);
+		   }(document, 'script', 'facebook-jssdk'));
+		</script>
+<!-- FB Open Graph Images -->
+	<img alt="Facebook Image" rel="Facebook image" content="http://qalang.com/images/qalang_logo_large.jpg" width= "1500" height="1500" style="display: none;"  />	
+<!--
+	<img alt="Facebook Image" rel="Facebook image" content="http://qalang.com/images/banner.jpg" style="display: none;" />
+	<img alt="Facebook Image" rel="Facebook image" content="http://qalang.com/images/halus_logo_large.png" style="display: none;"  />	
+-->
 	<div class="container">
 		
 		<div class="header">
@@ -80,6 +120,13 @@
 							
 						</ul>
 						<script type="text/javascript" src="js/responsive-nav.js"></script>
+						
+				</div>
+				<div
+				  class="fb-like"
+				  data-share="true"
+				  data-width="450"
+				  data-show-faces="true">
 				</div>
 				<div class="clearfix"></div>
 			</div>
