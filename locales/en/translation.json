@@ -1,0 +1,57 @@
+
+{
+  "app" : {
+    "name" : "Qalang"
+  }
+  "nav" : {
+    "home" : "Halus"
+    "story" : "The Story"	
+    "about" : "About Us"
+    "contact" : "Contact Us"
+  }
+  "home_page" : {
+    "gameplay_video_caption" : "Halus is coming soon! It's a puzzle game and comic book, based on the Atayal folktale of Halus the Giant. Android, iOS beta: Spring 2016!"
+    "halus_standing_graphic" : "Halus eats an unfortunate bear"
+	"halus_logo" : "Halus"
+  }
+  "story_page" : {
+    "story_title" : "HALUS THE GIANT"
+	"authorship_credit" : "By Chris Clark and Atung Yupas"
+	"paragraph_01" : "A long time ago there was a man that was very, very tall and strong. The Tayal people called him Halus. Such a man could be of great service to his tribe, but Halus was not that type of giant."
+	"paragraph_02" : "The other young men learned to set traps for wild boars. The young women grew millet and sweet potato. But Halus had found an easier way to fill his stomach. He would rest his chin on the ground and pound his fist on forest floor, sending the animals running into his mouth. He chewed the ancient cedars of the forest as if they were sugar cane and tore out wide swaths of beeches to make into his pillow."
+	"paragraph_03" : "He grew fat, his appetite endless. Meanwhile the members of tribe grew thinner by the day. The children’s stomachs bulged from starvation and the forests were stripped bare."
+	"paragraph_04" : "The tribe had had enough. One day they called Halus, telling him there was a beast too monstrous for them to fell, that they needed his help, that they could share the meat."
+	"paragraph_05" : "The women had built a fire underneath an enormous stone. When it was glowing hot they set it rolling down the hill. The men ran in terror from the supposed beast, while Halus waited at the bottom of the mountain, his greedy mouth gaping wide. Before he realized he had been tricked, he had already swallowed the fiery stone. He writhed in pain, holding his burning stomach, and soon lay still."
+    "end_credits" : "Atayal folktale, adapted by Chris Clark and Atung Yupas"
+  }
+  "about_page" : {
+    "chris" : {
+	   "name" : "Chris Clark"
+	   "title" : "CEO"
+	   "bio_paragraph" : "Chris lives in mountains of northern Taiwan. He is working with the elders of the Tayal and Truku tribes to transform their ancients tales into Qalang’s video games and comics. He develops Halus using the Unity game engine."
+	 }
+	"owen" : {
+	   "name" : "Owen Welsh"
+	   "title" : "Art Director"
+	   "bio_paragraph" : "Owen became fascinated with traditional animation as a boy. The characters, stories, designs and colors inspired him the way dreams do. Owen enjoys using traditional and digital media to create art and animation for Qalang."
+	}
+	"edward" : {
+	   "name" : "Edward Cheung"
+	   "title" : "CTO"
+	   "bio_paragraph" : "Edward has been friends with Owen since they were kids, and they started a manga shop together in their teens. Edward is a great engineer, and we're pumped to have him on our team!"
+	}	
+	"erich" : {
+	   "name" : "Erich Clark"
+	   "title" : "Sound Engineer"
+	   "bio_paragraph" : "Erich has been a soundguy for 20 years and went to college for writing. In his spare time, he plays video games and volunteers with his church youth group. Erich mixes sound effects, designs friendly Halus levels, and makes websites for Qalang."
+	}	
+	"taiwan" : {
+	   "heading" : "About Taiwan"
+	   "info_paragraph" : "Halus is a folk tale of the Tayal, Truku and Seediq tribes of northern Taiwan. They are three of the 16 officially recognized aboriginal ethnicities of Taiwan. They were once known for their facial tattoos, fierceness in battle and skilled weaving. The aborigines of Taiwan have lived in Taiwan for more than five thousand years. Chinese settlers began to arrive in the 17th century."
+	}
+	"qalang" : {
+	   "heading" : "About Qalang"
+	   "info_paragraph" : "Qalang is creating video games and comics inspired by the Tayal tribe of Taiwan."
+	}
+  }
+}
