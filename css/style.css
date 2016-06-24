@@ -105,7 +105,10 @@ table {
   caption-side:     bottom;
   border-collapse:  collapse;
 }
-
+.beta_invitation p{
+    color = white;
+    size: 1.5 em;
+}
 ul#about_qalang_characters li {
 	background-color: #ed8c35;
 	color: #12003c;
