@@ -36,6 +36,26 @@
 
 </head>
 <body>
+    <script>
+		  window.fbAsyncInit = function() {
+			FB.init({
+			  appId      : '1405615266425022',
+			  xfbml      : true,
+			  version    : 'v2.3'
+			});
+		  };
+
+		  (function(d, s, id){
+			 var js, fjs = d.getElementsByTagName(s)[0];
+			 if (d.getElementById(id)) {return;}
+			 js = d.createElement(s); js.id = id;
+			 js.src = "//connect.facebook.net/en_US/sdk.js";
+			 fjs.parentNode.insertBefore(js, fjs);
+		   }(document, 'script', 'facebook-jssdk'));
+		</script>
+<!-- FB Open Graph Images -->
+	<img alt="Facebook Image" rel="Facebook image" content="http://qalang.com/images/qalang_logo_large.jpg" width= "1500" height="1500" style="display: none;"  />	
+    
 	<div class="container">
 		<div class="header">
 			<div class="header_top">
@@ -59,6 +79,12 @@
 				</div>
 
 			  <div class="clearfix"> </div>
+                <div
+				  class="fb-like"
+				  data-share="true"
+				  data-width="450"
+				  data-show-faces="true">
+				</div>
 			</div>
 			<div class="clearfix"></div>
 		
@@ -68,7 +94,7 @@
 				<li>
 					<img src="images/chris_caricature.png" alt="Chris Clark caricature by Owen Walsh">
 					<h4>Chris Clark<br>CEO</h4>
-					<p>Chris lives in mountains of northern Taiwan. He is working with the elders of the Tayal and Truku tribes to transform their ancients tales into Qalang’s video games and comics. He develops Halus using the Unity game engine.</p>
+					<p>Chris lives in mountains of northern Taiwan. He is working with the elders of the Tayal and Truku tribes to transform their ancients tales into Qalang’s video games and comics.</p>
 				</li><li>
 					<img src="images/owen_caricature.png" alt="Self portrait caricature by Owen Walsh">
 					<h4>Owen Welsh<br>Art Director</h4>
@@ -78,9 +104,13 @@
 					<h4>Erich Clark<br>Sound Engineer</h4>
 					<p>Erich has been a soundguy for 20 years and went to college for writing. In his spare time, he plays video games and volunteers with his church youth group. Erich mixes sound effects, designs friendly Halus levels, and makes websites for Qalang.</p>
 				</li><li>
-                    <img src="images/edward_caricature.png" alt="Edward caricature by Owen Walsh">
+                    <img src="images/woodenHeadComingSoon" alt="Edward caricature by Owen Walsh">
 					<h4>Edward Cheung<br>CTO</h4>
 					<p>Edward hails from the sunny hills of the Bay Area, but has also lived in China, Hong Kong and Taiwan. He's had a lifelong love of great books, movies, and games, plus years of software engineering training. When he's not making games in Unity, he's trail running or jet-setting to adventures abroad to keep his Mandarin sharp.</p>
+				</li><li>
+                    <img src="images/woodenHeadComingSoon" alt="Analissa caricature by Owen Walsh">
+					<h4>Analissa Fazio<br>Concept Artist</h4>
+					<p>Aay Area native, Analissa Fazio is studying at the Academy of Art University in San Francisco to pursue her dreams of creating games and animated films.</p>
 				</li><li>
 					<img src="images/taiwan_aborigines.png" alt="Map of aboriginal tribes in Taiwan">
 					<h4>About Taiwan</h4>
