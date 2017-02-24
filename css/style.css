@@ -434,12 +434,16 @@ span.m_1{
 }
 /*--footer--*/
 .footer{
-	background:#110424;
 	padding:5em 0;
+    color: white;
 }
 .footer_icon{
 	position:relative;
 	text-align:center;
+}
+.footer,
+.push {
+    height: 50px;
 }
 i.icon{
 	display: inline-block;

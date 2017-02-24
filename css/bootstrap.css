@@ -646,7 +646,7 @@ blockquote .small {
   display: block;
   font-size: 80%;
   line-height: 1.42857143;
-  color: #999;
+  color: white;
 }
 blockquote footer:before,
 blockquote small:before,
