@@ -33,7 +33,7 @@
     "chris" : {
 	   "name" : "Chris Clark"
 	   "title" : "CEO"
-	   "bio_paragraph" : "Chris lives in mountains of northern Taiwan. He is working with the elders of the Tayal and Truku tribes to transform their ancients tales into Qalang’s video games and comics. He develops Halus using the Unity game engine."
+	   "bio_paragraph" : "Chris lives in mountains of northern Taiwan. He is working with the elders of the Tayal and Truku tribes to transform their ancients tales into Qalang’s video games and comics."
 	 }
 	"owen" : {
 	   "name" : "Owen Welsh"
@@ -43,7 +43,7 @@
 	"edward" : {
 	   "name" : "Edward Cheung"
 	   "title" : "CTO"
-	   "bio_paragraph" : "Edward has been friends with Owen since they were kids, and they started a manga shop together in their teens. Edward is a great engineer, and we're pumped to have him on our team!"
+	   "bio_paragraph" : "Edward hails from the sunny hills of the Bay Area, but has also lived in China, Hong Kong and Taiwan. He's had a lifelong love of great books, movies, and games, plus years of software engineering training. When he's not making games in Unity, he's trail running or jet-setting to adventures abroad to keep his Mandarin sharp."
 	}	
 	"erich" : {
 	   "name" : "Erich Clark"
