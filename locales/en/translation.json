@@ -4,19 +4,24 @@
     "name" : "Qalang"
   }
   "nav" : {
-    "home" : "Halus"
+    "home" : "Hot Stone"
     "story" : "The Story"	
     "about" : "About Us"
     "contact" : "Contact Us"
+	"faq" : "FAQ"
+	"privacy" : "Privacy"
+	"tos" : "Terms"
   }
   "home_page" : {
-    "gameplay_video_caption" : "Halus is coming soon! It's a puzzle game and comic book, based on the Atayal folktale of Halus the Giant. Android, iOS beta: Spring 2016!"
+    "gameplay_video_caption" : "Hot Stone is coming soon! It's a puzzle game and comic book, based on the Atayal folktale of Halus the Giant. Android, iOS beta: Spring 2017!"
     "halus_standing_graphic" : "Halus eats an unfortunate bear"
-	"halus_logo" : "Halus"
+	"hotstone_logo" : "Hot Stone"
   }
   "story_page" : {
     "story_title" : "HALUS THE GIANT"
-	"authorship_credit" : "By Chris Clark and Atung Yupas"
+	"authorship_credit" : "By Chris Clark and Atung Yupas, based on an Atayal folktale"
+	"art_credit" : "Art by Owen Welsh"
+	"lettering_credit" : "Lettering by Sean Rinehart"
 	"paragraph_01" : "A long time ago there was a man that was very, very tall and strong. The Tayal people called him Halus. Such a man could be of great service to his tribe, but Halus was not that type of giant."
 	"paragraph_02" : "The other young men learned to set traps for wild boars. The young women grew millet and sweet potato. But Halus had found an easier way to fill his stomach. He would rest his chin on the ground and pound his fist on forest floor, sending the animals running into his mouth. He chewed the ancient cedars of the forest as if they were sugar cane and tore out wide swaths of beeches to make into his pillow."
 	"paragraph_03" : "He grew fat, his appetite endless. Meanwhile the members of tribe grew thinner by the day. The children’s stomachs bulged from starvation and the forests were stripped bare."
@@ -45,6 +50,16 @@
 	   "title" : "Sound Engineer"
 	   "bio_paragraph" : "Erich has been a soundguy for 20 years and went to college for writing. In his spare time, he plays video games and volunteers with his church youth group. Erich mixes sound effects, designs friendly Halus levels, and makes websites for Qalang."
 	}	
+	"analissa" : {
+		"name" : "Analissa Fazio"
+		"title" : "Concept Artist"
+		"bio_paragraph" : "Analissa is an artist and musician, inspired by paintings, comics, films, and games. She recently studied Visual Development and Game Design at Academy of Art in SF. Between the hours drawing for Qalang, she will most likely be playing piano, working on personal creative projects, or out exploring the city."
+	}
+	"atung" : {
+		"name" : "Atung Yapas"
+		"title" : "title here"
+		"bio_paragraph" : "bio here"
+	}
 	"taiwan" : {
 	   "heading" : "About Taiwan"
 	   "info_paragraph" : "Halus is a folk tale of the Tayal, Truku and Seediq tribes of northern Taiwan. They are three of the 16 officially recognized aboriginal ethnicities of Taiwan. They were once known for their facial tattoos, fierceness in battle and skilled weaving. The aborigines of Taiwan have lived in Taiwan for more than five thousand years. Chinese settlers began to arrive in the 17th century."
@@ -54,4 +69,75 @@
 	   "info_paragraph" : "Qalang is creating video games and comics inspired by the Tayal tribe of Taiwan."
 	}
   }
+  "contact_page" :{
+	"title" : "Contact Us"
+	"tester_invitation" : "Join our iOS beta team! <br> Just include &quot;iOS beta&quot; in the Subject line below."
+	"name" : "Name:"
+	"email" : "email address"
+	"subject" : "Subject"
+	"send" : "Send"
+  }
+  "faq_page" : {
+		"title" : "Frequently Asked Questions"
+  
+		"faqQ-install" : "Q: I’m having trouble installing Hotstone. Help!"
+		"faqA-install" : "A: Installation problems are usually due to low memory space. Make sure you are online and have enough free space."
+		  
+		"faqQ-free" : "Q: Is Hotstone free to play?"
+		"faqA-free" : "A: It is free to play the first 19 levels of the Summer Summits Adventure Pack and the first 9 levels of Blizzard Bluffs. Please visit our in-app store to play more!"
+			
+		"faqQ-internet" : "Q: Do I need an internet connection to play HotStone?"
+		"faqA-internet" : "A: No, but you’ll need one to buy map packs or comic pages or to share a achievement badges on Facebook."
+			
+		"faqQ-restore" : "Q: I bought an adventure pack, comic page, or comic book, but I deleted HotStone from my phone. How do I get them back?"
+		"faqA-restore-apple-01" : "A1: On Apple devices:"
+		"faqA-restore-apple-02" : "Make sure you are connected to the internet."
+		"faqA-restore-apple-03" : "Return to the Main Menu."
+		"faqA-restore-apple-04" : "Click ‘Options.’"
+		"faqA-restore-apple-05" : "Scroll down and click ‘Restore Purchases.’"
+		"faqA-restore-apple-06" : "In a few moments, your purchases should be restored."
+		"faqA-restore-android-01" : "A2: On Android devices:"
+		"faqA-restore-android-02" : "Make sure you are connected to the internet."
+		"faqA-restore-android-03" : "Start Hot Stone."
+		"faqA-restore-android-04" : "In a few moments, your purchases should be restored automatically."
+			
+		"faqQ-lostProgress" : "Q: Help! I reinstalled HotStone and all my progress has been lost!"
+		"faqA-lostProgress" : "A: Unfortunately, uninstalling HotStone deletes all your level/badge progress and relocks comic reward pages." 
+			
+		"faqQ-morePages" : "Q: How can I obtain more comic pages?"
+		"faqA-morePages01" : "A: You may obtain comic pages by passing levels, purchasing them individually, or buying the entire comic book."
+		"faqA-morePages02" : "Note: You permanently own any pages you buy, so you can immediately restore them if you reinstall HotStone. However, reinstalling HotStone resets all of your progress, including comic page rewards for passing levels, so you will need to re-earn any pages you have not purchased."
+			
+		"faqQ-fullComic" : "Q: I purchased the entire comic book but can’t access pages 11-22. The message says: ‘Coming Spring 2017!’ Why?"
+		"faqA-fullComic" : "A: Pages 1-10 are complete and are available in our first release. We are finishing pages 11-22 and will include them in an update this spring. If you purchase the entire comic book, you will automatically get the new pages when you install the update. ""
+			
+		"faqQ-hardCopy" : "Q: I love your art! Is there any way I can purchase a hard copy of the comic?"
+		"faqA-hardCopy01" : "A: Not yet, but very soon! Fill out our Contact Us form, subject 'Paper Copy,' and you will be the first to know when they are available."
+		"faqA-hardCopy02" : "A: Thank you! Our artists are tireless and passionate! We are pleased to offer hard copies here:"
+			
+		"faqQ-resetData" : "Q: Can I reset my data and start over?"
+		"faqA-resetData" : "A: Absolutely. Just delete and reinstall the HotStone app. Please note that this will relock all comic reward pages and reset all badge progress. If you have purchased comic pages, those will be immediately available."
+			
+		"faqQ-TPedia" : "Q: I forgot what such-and-such tiles do. Where can I get help?"
+		"faqA-TPedia01" : "A: You can read about all of our tiles in the Tayalopedia."
+		"faqA-TPedia02" : "From the Main Menu, tap 'Options' then 'Tayalopedia'"
+		"faqA-TPedia03" : "OR"
+		"faqA-TPedia04" : "During level play, pause your game by tapping anywhere, then 'Options,' then 'Tayalopedia.'"
+			
+		"faqQ-secretLevels" : "Q: How do I earn Secret Levels? For that matter, what is a Secret Level?"
+		"faqA-secretLevels" : "A: Secret Levels offer additional challenges and fun! A Secret Level marker will appear on a side path with a number above it. You must beat all the levels up to that path and collect that number of eyes before you can play it. ""
+			
+		"faqQ-eyes" : "Q: Wait... what are eyes, and how do I collect them?"
+		"faqA-eyes01" : "Eyes are our skills reward system. The Tayal people weave diamonds into their designs that symbolize harmony with ancestors and Gaga (tribal values)."
+		"faqA-eyes02" : "It is possible to earn three eyes on every Hot Stone level. You earn one when you:"
+		"faqA-eyes03" : "Beat a level the first time."
+		"faqA-eyes04" : "Beat it using less tiles than the low tile goal."
+		"faqA-eyes05" : "Beat it under the time limit."
+			
+		"FaqQ-mapPacks" : "Q: I love Hot Stone! When will you release more Adventure Packs?"
+		"FaqA-mapPacks" : "A: We have Blizzard Bluffs, Torrential Typhoon, and Burning Peaks Adventure Packs on the horizon. These will introduce awesome new gameplay elements and tiles."
+			
+		"faqQ-LE" : "Q: I wish I could make levels of my own. Can we do that, pretty please?"
+		"faqA-LE" : "A: It is very possible that a level editor will be coming in the near future..."
+	}
 }
