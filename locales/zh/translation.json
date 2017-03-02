@@ -1,0 +1,143 @@
+
+{
+  "app" : {
+    "name" : ""
+  }
+  "nav" : {
+    "home" : ""
+    "story" : ""	
+    "about" : ""
+    "contact" : ""
+	"faq" : ""
+	"privacy" : ""
+	"tos" : ""
+  }
+  "home_page" : {
+    "gameplay_video_caption" : ""
+    "halus_standing_graphic" : ""
+	"hotstone_logo" : ""
+  }
+  "story_page" : {
+    "story_title" : ""
+	"authorship_credit" : ""
+	"art_credit" : ""
+	"lettering_credit" : ""
+	"paragraph_01" : ""
+	"paragraph_02" : ""
+	"paragraph_03" : ""
+	"paragraph_04" : ""
+	"paragraph_05" : ""
+    "end_credits" : ""
+  }
+  "about_page" : {
+    "chris" : {
+	   "name" : ""
+	   "title" : ""
+	   "bio_paragraph" : ""
+	 }
+	"owen" : {
+	   "name" : ""
+	   "title" : ""
+	   "bio_paragraph" : ""
+	}
+	"edward" : {
+	   "name" : ""
+	   "title" : ""
+	   "bio_paragraph" : ""
+	}	
+	"erich" : {
+	   "name" : ""
+	   "title" : ""
+	   "bio_paragraph" : ""
+	}	
+	"analissa" : {
+		"name" : ""
+		"title" : ""
+		"bio_paragraph" : ""
+	}
+	"atung" : {
+		"name" : ""
+		"title" : ""
+		"bio_paragraph" : ""
+	}
+	"taiwan" : {
+	   "heading" : ""
+	   "info_paragraph" : ""
+	}
+	"qalang" : {
+	   "heading" : ""
+	   "info_paragraph" : ""
+	}
+  }
+  "contact_page" :{
+	"title" : ""
+	"tester_invitation" : ""
+	"name" : ""
+	"email" : ""
+	"subject" : ""
+	"send" : ""
+  }
+  "faq_page" : {
+		"title" : ""
+  
+		"faqQ-install" : ""
+		"faqA-install" : ""
+		  
+		"faqQ-free" : ""
+		"faqA-free" : ""
+			
+		"faqQ-internet" : ""
+		"faqA-internet" : ""
+			
+		"faqQ-restore" : ""
+		"faqA-restore-apple-01" : ""
+		"faqA-restore-apple-02" : ""
+		"faqA-restore-apple-03" : ""
+		"faqA-restore-apple-04" : ""
+		"faqA-restore-apple-05" : ""
+		"faqA-restore-apple-06" : ""
+		"faqA-restore-android-01" : ""
+		"faqA-restore-android-02" : ""
+		"faqA-restore-android-03" : ""
+		"faqA-restore-android-04" : ""
+			
+		"faqQ-lostProgress" : ""
+		"faqA-lostProgress" : "" 
+			
+		"faqQ-morePages" : ""
+		"faqA-morePages01" : ""
+		"faqA-morePages02" : ""
+			
+		"faqQ-fullComic" : ""
+		"faqA-fullComic" : ""
+			
+		"faqQ-hardCopy" : ""
+		"faqA-hardCopy01" : ""
+		"faqA-hardCopy02" : ""
+			
+		"faqQ-resetData" : ""
+		"faqA-resetData" : ""
+			
+		"faqQ-TPedia" : ""
+		"faqA-TPedia01" : ""
+		"faqA-TPedia02" : ""
+		"faqA-TPedia03" : ""
+		"faqA-TPedia04" : ""
+			
+		"faqQ-secretLevels" : ""
+		"faqA-secretLevels" : ""
+			
+		"faqQ-eyes" : ""
+		"faqA-eyes01" : ""
+		"faqA-eyes02" : ""
+		"faqA-eyes03" : ""
+		"faqA-eyes04" : ""
+		"faqA-eyes05" : ""
+			
+		"FaqQ-mapPacks" : ""
+		"FaqA-mapPacks" : ""
+			
+		"faqQ-LE" : ""
+		"faqA-LE" : ""
+	}
+}
