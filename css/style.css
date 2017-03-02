@@ -432,19 +432,7 @@ span.m_1{
 .grid_1.text-center {
 	margin-top: 4em;
 }
-/*--footer--*/
-.footer{
-	padding:5em 0;
-    color: white;
-}
-.footer_icon{
-	position:relative;
-	text-align:center;
-}
-.footer,
-.push {
-    height: 50px;
-}
+
 i.icon{
 	display: inline-block;
 	position: absolute;
@@ -1148,4 +1136,40 @@ ul.service_box {
 	height: 150px;
 	resize: none;
 }
+}
+
+/*--footer--*/
+.footer{
+	padding:5em 0;
+    color: white;
+}
+.footer_icon{
+	position:relative;
+	text-align:center;
+}
+/*.footer,
+.push {
+    height: 50px;
+	position: sticky;
+}*/
+#legalPages{
+	text-align: left;
+	position: absolute;
+	bottom: 0;
+	color: white;
+	font-size: 100%;
+	list-style-type: none;
+	
+}
+a:link.legalFooters,
+a:visited.legalFooters,
+a:hover.legalFooters,
+a:active.legalFooters {
+	color: white;
+	font-size: 50%;
+}
+
+#faqText{
+	color: white;
+	font-size: 100%;
 }
