@@ -1169,7 +1169,19 @@ a:active.legalFooters {
 	font-size: 50%;
 }
 
-#faqText{
+#faqText {
 	color: white;
 	font-size: 100%;
+	background-color: #ed8c35;
+	padding: 1em;
+	text-align: left;
+	text-indent: -10px;
+	margin-left: 10px;
+}
+h1.faqText {
+	font-size: 100%;
+	background-color: #ed8c35;
+}
+ol.faqList {
+	list-style-position: inside;
 }
