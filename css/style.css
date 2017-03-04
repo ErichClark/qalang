@@ -1152,7 +1152,7 @@ ul.service_box {
     height: 50px;
 	position: sticky;
 }*/
-#legalPages{
+#littleLink{
 	text-align: left;
 	position: absolute;
 	bottom: 0;
@@ -1161,10 +1161,10 @@ ul.service_box {
 	list-style-type: none;
 	
 }
-a:link.legalFooters,
-a:visited.legalFooters,
-a:hover.legalFooters,
-a:active.legalFooters {
+a:link.littleLink,
+a:visited.littleLink,
+a:hover.littleLink,
+a:active.littleLink {
 	color: white;
 	font-size: 50%;
 }
