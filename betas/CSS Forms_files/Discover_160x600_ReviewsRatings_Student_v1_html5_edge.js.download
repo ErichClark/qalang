@@ -1,0 +1,32 @@
+
+(function(compId){var _=null,y=true,n=false,x1='6.0.0',x15='rgba(255,255,255,0.00)',x2='5.0.0',x5='rgba(0,0,0,0)',g='image',e40='${shine}',x27='142px',x23='bg',x24='1',x38='rgba(255,255,255,0.50)',x20='250',x16='solid',m='rect',x4='rgba(255,255,255,1.00)',i='none',x3='6.0.0.400',x31='161px',x33='78px',lf='left',x39='hidden',x37='rgb(153, 153, 153)',x36='shine',x29='mycta',x35='-39',x21='auto',x22='rgb(255, 255, 255)',x34='81px',x32='-32px',x28='26px',x17='rgba(255,255,255,1)',x26='250px',x19='300',x18='0px',x25='300px';var g13='t2.png',g11='reviews.png',g10='c3.png',g6='bg1.jpg',g30='mycta.png',g7='t1.png',g9='c2.png',g8='c1.png',g12='stars.png',g14='card.png';var im='images/',aud='media/',vid='media/',js='js/',fonts={},opts={'gAudioPreloadPreference':'auto','gVideoPreloadPreference':'auto'},resources=[],scripts=[],symbols={"stage":{v:x1,mv:x2,b:x3,stf:i,cg:i,rI:n,cn:{dom:[{id:'white',t:m,r:['0px','0px','160px','600px','auto','auto'],f:[x4],s:[1,"rgb(153, 153, 153)",i]},{id:'bg1',t:g,r:['0','0','160px','600px','auto','auto'],f:[x5,im+g6,'0px','0px']},{id:'t1',t:g,r:['13px','276px','133px','56px','auto','auto'],f:[x5,im+g7,'0px','0px']},{id:'c1',t:g,r:['-29px','-19px','216px','216px','auto','auto'],f:[x5,im+g8,'0px','0px']},{id:'c2',t:g,r:['-29px','83px','216px','216px','auto','auto'],f:[x5,im+g9,'0px','0px']},{id:'c3',t:g,r:['-27px','198px','215px','215px','auto','auto'],f:[x5,im+g10,'0px','0px']},{id:'review',t:g,r:['11px','321px','135px','43px','auto','auto'],f:[x5,im+g11,'0px','0px']},{id:'stars',t:g,r:['7px','287px','145px','25px','auto','auto'],f:[x5,im+g12,'0px','0px']},{id:'cta',symbolName:'cta',t:m,r:['9','403px','142','26','auto','auto']},{id:'t2',t:g,r:['-73px','-77px','305px','305px','auto','auto'],f:[x5,im+g13,'0px','0px']},{id:'card',t:g,r:['10px','170px','139px','87px','auto','auto'],f:[x5,im+g14,'0px','0px']},{id:'border',t:m,r:['0px','0','158px','598px','auto','auto'],o:'1',f:[x15],s:[1,"rgba(153,153,153,1.00)",x16]},{id:'hotspot',symbolName:'white_bg',t:m,r:['-70px','175px','300','250','auto','auto'],cu:'pointer',o:'0',tf:[[],[],[],['0.53333','2.4']]}],style:{'${Stage}':{isStage:true,r:['null','null','160px','600px','auto','auto'],overflow:'hidden',f:[x17]}}},tt:{d:1000,a:y,data:[]}},"white_bg":{v:x1,mv:x2,b:x3,stf:i,cg:i,rI:n,cn:{dom:[{r:[x18,x18,x19,x20,x21,x21],s:[5,x22,i],id:x23,o:x24,t:m,f:[x4]}],style:{'${symbolSelector}':{r:[_,_,x25,x26]}}},tt:{d:0,a:y,data:[]}},"cta":{v:x1,mv:x2,b:x3,stf:i,cg:i,rI:n,cn:{dom:[{r:[x18,x18,x27,x28,x21,x21],id:x29,t:g,f:[x5,im+g30,x18,x18]},{r:[x31,x32,x33,x34,x21,x21],tf:[[],[],[x35],[1,1,1]],id:x36,s:[1,x37,i],t:m,f:[x15,[180,[[x15,0],[x38,51],[x15,100]]]]}],style:{'${symbolSelector}':{overflow:x39,r:[_,_,x27,x28]}}},tt:{d:1000,a:y,data:[["eid1",lf,0,1000,"linear",e40,'-98px','161px']]}}};AdobeEdge.registerCompositionDefn(compId,symbols,fonts,scripts,resources,opts);})("EDGE-57563009");
+(function($,Edge,compId){var Composition=Edge.Composition,Symbol=Edge.Symbol;Edge.registerEventBinding(compId,function($){
+//Edge symbol: 'stage'
+(function(symbolName){Symbol.bindElementAction(compId,symbolName,"${hotspot}","mouseover",function(sym,e){sym.getSymbol("cta").play();});
+//Edge binding end
+Symbol.bindElementAction(compId,symbolName,"${hotspot}","mouseout",function(sym,e){});
+//Edge binding end
+Symbol.bindElementAction(compId,symbolName,"document","compositionReady",function(sym,e){var t1=sym.$("t1");var t2=sym.$("t2");var c1=sym.$("c1");var c2=sym.$("c2");var c3=sym.$("c3");var stars=sym.$("stars");var review=sym.$("review");var cta=sym.$("cta");var card=sym.$("card");var bg1=sym.$("bg1");var timeline;function animation(){var tl=new TimelineMax();tl.from(card,.75,{x:-300,ease:Power4.easeInOut},0.25).from(t1,.75,{x:"300",ease:Power4.easeInOut},0.25).to(t1,.75,{alpha:0,ease:Power4.easeInOut},1.75).to(card,.75,{top:400,ease:Power4.easeInOut,transformOrigin:"center center"},2).from(bg1,.75,{alpha:0,ease:Power4.easeInOut},2).from(c1,.75,{scale:0,ease:Elastic.easeOut.config(1,0.75)},2.5).to(c1,.75,{scale:0,ease:Elastic.easeIn.config(1,0.75)},4.5).from(c2,.75,{scale:0,ease:Elastic.easeOut.config(1,0.75)},5.5).to(c2,.75,{scale:0,ease:Elastic.easeIn.config(1,0.75)},8).from(c3,.75,{scale:0,ease:Elastic.easeOut.config(1,0.75)},9).to(c3,.75,{scale:0,ease:Elastic.easeIn.config(1,0.75)},11).to(bg1,.75,{alpha:0,ease:Power4.easeInOut},11.5).to(card,.75,{top:170,ease:Power4.easeInOut},11.5).from(stars,.75,{alpha:0,ease:Power4.easeInOut},11.75).from(review,.75,{alpha:0,ease:Power4.easeInOut},11.75).from(t2,.75,{alpha:0,ease:Power4.easeInOut},12).from(cta,.75,{alpha:0,ease:Power4.easeInOut},12.1)
+TweenMax.delayedCall(13,playBtn);return tl;}
+function playBtn(){sym.getSymbol("cta").play();}
+function playCard(){TweenMax.to(myshine,1,{x:500});}
+function playCard2(){TweenMax.to(myshine2,1,{x:400});}
+function init(){timeline=new TimelineMax();timeline.add(animation(),0)
+timeline.timeScale(1)}
+sym.myReplay=function(){timeline.restart();};window.onload=init();});
+//Edge binding end
+})("stage");
+//Edge symbol end:'stage'
+
+//=========================================================
+
+//Edge symbol: 'white_bg'
+(function(symbolName){})("white_bg");
+//Edge symbol end:'white_bg'
+
+//=========================================================
+
+//Edge symbol: 'cta'
+(function(symbolName){})("cta");
+//Edge symbol end:'cta'
+})})(AdobeEdge.$,AdobeEdge,"EDGE-57563009");

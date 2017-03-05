@@ -1,0 +1,87 @@
+document.write('<div class="printhide"><div class="menubar-color"><div class="menubar">');
+
+document.write('<div id="menu-box">');
+
+document.write('<div id="menu-top">');
+
+document.write('<a href="javascript:toggleDiv(\'menu-sub\');"><img src="http://www.allwebco-templates.com/support/menu-icons/menu-icon.png" width="75" height="50" class="menu-icon" alt="Open Menu"></a>');
+
+document.write('</div>');
+
+document.write('<div id="menu-sub">');
+
+document.write('<a href="http://www.allwebco-templates.com/support/" class="menu">Home</a>');
+
+document.write('<a href="http://allwebco-templates.com/support/about.html" class="menu">About</a>');
+
+document.write('<a href="http://allwebco-templates.com/support/search.html" class="menu">Search</a>');
+
+document.write('<a href="http://allwebcodesign.com/setup/index.htm" class="menu">HTML Templates</a>');
+
+document.write('<a href="http://allwebco.com/features.shtml" class="menu">Web Hosting</a>');
+
+document.write('<a href="http://allwebco-templates.com/support/news.html?" class="menu">News</a>');
+
+document.write('<a href="http://allwebco-templates.com/support/links.html" class="menu">Links</a>');
+
+document.write('<a href="http://www.allwebco-templates.com/support/scripts.html" class="menu">Free Scripts &amp; Addons</a>');
+
+document.write('<a href="http://allwebco-templates.com/support/S_contact_us.htm" class="menu">Contact</a>');
+
+document.write('</div>');
+
+document.write('</div>');
+
+document.write('<div class="menu-icon-box">');
+
+document.write('<div class="menuicon">');
+document.write('<a href="javascript:toggleLayer(\'searchpop\');"><img src="http://www.allwebco-templates.com/support/menu-icons/icon-search.png" alt="Search"></a>');
+document.write('</div>');
+
+document.write('<div class="menuicon">');
+document.write('<a href="https://twitter.com/allwebcodesign" target="_blank"><img src="http://www.allwebco-templates.com/support/menu-icons/social-twitter.png" alt="Follow us on twitter"></a>');
+document.write('</div>');
+
+document.write('<div class="menuicon">');
+document.write('<a href="https://www.facebook.com/allwebcodesign" target="_blank"><img src="http://www.allwebco-templates.com/support/menu-icons/social-facebook.png" alt="Connect on Facebook"></a>');
+document.write('</div>');
+
+document.write('<div class="menuicon hidemobile">');
+document.write('<a href="https://plus.google.com/+Allwebcodesign/" target="_blank"><img src="http://www.allwebco-templates.com/support/menu-icons/social-googleplus.png" alt="Check us on Google Plus"></a>');
+document.write('</div>');
+
+document.write('<div class="menuicon">');
+document.write('<a href="http://allwebco-templates.com/support/S_contact_us.htm" target="_top"><img src="http://www.allwebco-templates.com/support/menu-icons/icon-contact.png" alt="Contact Us"></a>');
+document.write('</div>');
+
+document.write('<div class="menuicon">');
+document.write('<a href="http://www.allwebco-templates.com/support/" target="_top"><img src="http://www.allwebco-templates.com/support/menu-icons/icon-home.png" alt="Home"></a>');
+document.write('</div>');
+
+document.write('</div>');
+
+document.write('</div></div></div>');
+
+document.write('<div class="floatclear menuclear"></div>');
+
+document.write('<div id="searchpop" class="printhide">');
+
+document.write('<form method="post" action="http://allwebco-templates.com/cgi-bin/websearch.pl" onsubmit="return submitForm(this.submitbutton)" name="application" class="formmargin">');
+document.write('<input type="hidden" name="hits" value="15">');
+document.write('<input type="hidden" name="DateRange" value="All">');
+
+document.write('<table class="search-top"><tr><td>');
+
+document.write('<input type="text" name="terms" size="22" maxlength="150" class="stterms" value=""><br>');
+
+document.write('<input type="radio" name="boolean" value="any terms" checked>broad <input type="radio" name="boolean" value="all terms">exact<br>');
+
+document.write('</td><td>');
+
+document.write('<input type="submit" value="Search" name="submitbutton" class="stbutton"><br>');
+
+document.write('</td></tr></table>');
+
+document.write('</form>');
+
+document.write('</div>');

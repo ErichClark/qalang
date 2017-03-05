@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)https://cdn.flashtalking.com/68774/1721627/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style></style>
+<title>BGold_Image_160x600</title>
+<!-- write your code here -->
+
+
+<script src="./createjs-2015.11.26.min.js.download"></script>
+<script src="./BGold_Image_160x600.js.download"></script>
+<script>
+var clickTag = "https://www.americanexpress.com/us/small-business/credit-cards/business-gold-rewards";
+
+		function bannerBgClicked() {
+			//console.log("clickOut");
+			myFT.clickTag();
+			//bgExitHandler();
+		}
+var canvas, stage, exportRoot;
+function init() {
+	// --- write your JS code here ---
+	
+	canvas = document.getElementById("canvas");
+	images = images||{};
+
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", handleFileLoad);
+	loader.addEventListener("complete", handleComplete);
+	loader.loadManifest(lib.properties.manifest);
+}
+
+function handleFileLoad(evt) {
+	if (evt.item.type == "image") { images[evt.item.id] = evt.result; }
+}
+
+function handleComplete(evt) {
+	exportRoot = new lib.BGold_Image_160x600();
+
+	stage = new createjs.Stage(canvas);
+	stage.addChild(exportRoot);
+	stage.update();
+	stage.enableMouseOver();
+
+	createjs.Ticker.setFPS(lib.properties.fps);
+	createjs.Ticker.addEventListener("tick", stage);
+}
+
+</script>
+
+<!-- write your code here -->
+
+</head>
+<body onload="init();" style="background-color:#D4D4D4;margin:0px;">
+	<canvas id="canvas" width="160" height="600" style="background-color:#FFFFFF"></canvas>
+
+<script src="./html5API.js.download"></script>
+
+
+</body></html>

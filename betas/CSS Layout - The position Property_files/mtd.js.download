@@ -1,0 +1,123 @@
+var mainTimeLine;
+var clickarea; 
+var w1; 
+var w2; 
+var w3; 
+var w5; 
+
+var t1; 
+var t2; 
+var t3; 
+
+var button1;
+
+function initBanner() {
+	addVars();
+	addListeners();
+	startanimation();
+
+}
+
+function addVars() {
+
+	mainTimeLine = new TimelineMax();
+	clickarea = document.getElementById('clickarea');
+	w1 = document.getElementById('w1');
+	w2 = document.getElementById('w2');
+	w3 = document.getElementById('w3');
+	w5 = document.getElementById('w5');
+
+	t1 = document.getElementById('t1');
+	t2 = document.getElementById('t2');
+	t3 = document.getElementById('t3');
+	button1 = document.getElementById('button1');
+	
+}
+
+function addListeners(){
+	button1.addEventListener('click', ctaClick);
+	clickarea.addEventListener('click', bkgclick);
+
+}
+function bkgclick(){
+	console.log("bkg click");
+	window.open(clickTag1, "_blank");
+	//mainTimeLine.pause();
+}
+
+function ctaClick(){
+	console.log("CTA click");
+	window.open(clickTag, "_blank");
+}
+
+
+
+function startanimation() {
+	
+	container.style.display="block";
+	mainTimeLine.addLabel("frame1", "+=.5");
+	mainTimeLine.addLabel("frame3", "+=5.75");
+	mainTimeLine.addLabel("frame4", "+=9");
+	mainTimeLine.addLabel("frame5", "+=14"); 
+	mainTimeLine.addLabel("frame6", "+=19"); 
+
+	//mainTimeLine.set(h2, {scale:.8}, "frame1");
+	mainTimeLine.to(h1, .75, {opacity:1, ease:Power4.easeOut}, "frame1");	
+
+	// zoom gray circle
+	mainTimeLine.to(frame1, .5, {scale:.16, y:-60, ease:Power1.easeInOut},"frame1+=3");
+	mainTimeLine.to(circshape, .5, {backgroundColor:"#dddddd", ease:Power1.easeInOut},"frame1+=3");
+
+	mainTimeLine.to(h1, .5, {opacity:0, ease:Power1.easeInOut},"frame1+=3");
+	mainTimeLine.to(frame1, .25, {opacity:0, ease:Power1.easeOut},"frame1+=3.5");
+
+	//white box up
+	mainTimeLine.to(frame3, .5, {y:-250, ease:Power1.easeOut},"frame3");
+	mainTimeLine.to(h2, .5, {opacity:1, ease:Power1.easeOut},"frame3+=.25");
+	mainTimeLine.to(h2, .5, {scale:1, rotation: 0.01, ease:Power1.easeInOut},"frame3+=.35");
+
+	mainTimeLine.set(frame2, {opacity:0},"frame3+=.5");
+
+	mainTimeLine.to(h2, .5, {scale:0.8, rotation: 0.01,ease:Power1.easeIn},"frame4");
+	mainTimeLine.to(frame3, .5, {y:-500, ease:Power1.easeIn},"frame4");
+	mainTimeLine.to(frame4, .5, {scale:1.5, ease:Power1.easeIn},"frame4+=2");
+	mainTimeLine.to(circshape2, .2, {opacity:1, ease:Power1.easeIn},"frame4+=2.05");
+	mainTimeLine.to(circshape2, .75, {scale:10, ease:Power1.easeInOut},"frame4+=2.05");
+	mainTimeLine.from(h3, .5, {opacity:0, scale:.8, rotation: 0.01, ease:Power1.easeIn},"frame4+=2.25");
+	mainTimeLine.to(greenbox, .75, {y:-100, ease:Power1.easeInOut},"frame4+=3");
+	
+	//green up
+	mainTimeLine.set([h4,h5,h6], {scale:.8}, "frame5");
+		// mainTimeLine.set(h5, {y:-10}, "frame5");
+
+
+	mainTimeLine.to(frame6, .75, {y:-251, ease:Power4.easeInOut},"frame5");
+	mainTimeLine.to(h4, .5, {opacity:1, scale:1, rotation: 0.01, ease:Power4.easeInOut},"frame5+=.5");
+	
+	mainTimeLine.to(h4, .5, {opacity:0, ease:Power4.easeOut},"frame5+=2.10");
+	mainTimeLine.to(h5, .5, {opacity:1, scale:1, y:0, rotation: 0.01, ease:Power4.easeInOut},"frame5+=2.15");
+	mainTimeLine.to(h6, .5, {opacity:1, scale:1, y:0, rotation: 0.01, ease:Power4.easeInOut},"frame5+=2.65");
+
+	
+	mainTimeLine.to([h6,h5], .5, {opacity:0, y:-100,ease:Power4.easeIn},"frame6");
+	mainTimeLine.to(frame7, 1, {y:-251, ease:Power4.easeOut},"frame6+=.25");
+
+	mainTimeLine.from(t1, .75, {opacity:0, scale:.8, rotation: 0.01, ease:Power4.easeOut},"frame6+=.75");
+	mainTimeLine.from(t2, .75, {opacity:0, scale:.8, rotation: 0.01, ease:Power4.easeOut},"frame6+=1");
+	mainTimeLine.from(t3, .75, {opacity:0, scale:.8, rotation: 0.01, ease:Power4.easeOut},"frame6+=1.25");
+
+
+	mainTimeLine.to(w1, .5, {opacity:1, ease:Power4.easeOut},"frame6+=1.75");
+	mainTimeLine.to(w3, .5, {height:1, ease:Power4.easeOut},"frame6+=2.25");
+	mainTimeLine.to(w2, .5, {y:30, ease:Power4.easeOut},"frame6+=2.25");
+	mainTimeLine.to(w5, 1, {backgroundPosition:"-228px -204px", ease:Power4.easeOut},"frame6+=2.5");
+
+	mainTimeLine.set(button1,{display:"block"},"frame6+=3");
+	mainTimeLine.to(button1, 1, {opacity:1, ease:Power4.easeOut},"frame6+=3");
+
+	mainTimeLine.to(glow, 5, {display:"block", opacity:0, ease:Power4.easeOut},"frame6+=3.5");
+	
+}	
+
+
+

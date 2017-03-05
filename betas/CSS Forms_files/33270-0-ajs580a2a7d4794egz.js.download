@@ -1,0 +1,1029 @@
+var initiate = (function(_root, jq) {
+
+
+
+
+    var reiCreativeData,
+        sparkREI = sparkREI || {},
+        REIMarFeedData = dynamicData['REIMarFeed'];
+
+    sparkREI.defaults = {
+        container: "#maincontainer",
+        cloudyData: {},
+        snowyData: {},
+        sunnyData: {},
+        rainyData: {},
+        defaultData: {},
+        totalImageCount: 0,
+        totalImagesLoaded: null
+    };
+
+    (function() {
+        var self = this,
+            cMacro = parent.getParameterValue(parent.window.location.href, "cMacro");
+
+        cMacro = ((typeof cMacro !== "undefined") && cMacro != "" && cMacro != null) ? decodeURIComponent(cMacro) : "";
+
+        self.alignLayout = function() {
+            jq("#productImg").html("<div class='slider'><ul id='custSlider' class='bxslider'></ul></div>");
+            var custSlider = jq("#custSlider");
+            window["getData"] = function(result) {
+
+
+               
+                var productArray = new Array();
+             //   console.log("REIMarFeedData[0]",REIMarFeedData[0])
+             if ("undefined" != typeof REIMarFeedData && REIMarFeedData.length > 0) {
+                 productArray.push(REIMarFeedData[0]);
+             }
+                //productArray.push(REIMarFeedData[0]);
+
+                result["REIMarFeed:REIMarFeed"].forEach(function(val){
+                  
+
+                   if(val.id !== productArray[0].id) {
+                   
+                    productArray.push(val)
+
+                   }
+                });
+
+           
+               if(productArray.length>4)
+                    productArray.pop();
+         
+
+                productArray.forEach(function(product){
+                     self.fireEvent(decodeURIComponent(product.title).replace(/[^a-zA-Z0-9]/g, '_'), "Imp");
+                })
+
+                //checking if our primary product is repeating in the second db list
+
+
+
+
+              
+
+
+
+                for (var i = 0; i < productArray.length; i++)
+                {
+                    var value = productArray[i];
+                    for (var key in value) {
+
+
+                        if (key === "image_link") {
+                            productImageURL = value[key].split("?")[0].replace('media', 'zoom') + "/150x118";
+                            var li_images = "<li class='list_items'><img id='list_" + i + "' src=" + decodeURIComponent(productImageURL) + " width='150' height='118' /></li>";
+                            custSlider.append(li_images);
+                        } else if (key === "title") {
+                            productNameCopy = decodeURIComponent(value[key]);
+                            jq("#list_" + i).data("title", productNameCopy);
+
+
+                        } else if (key === "link") {
+                            productLinkURL = decodeURIComponent(value[key]);
+                            jq("#list_" + i).data("productLinkURL", productLinkURL);
+
+
+                        } else if (key === "price") {
+                            productPriceCopy = decodeURIComponent(value[key]);
+                            jq("#list_" + i).data("price", "$"+productPriceCopy);
+
+
+                        } 
+
+
+                    }
+                    var productNameTemp = jq(".list_items:not(.bx-clone)").eq(0).find("img").data("title").split(" - ");
+                    //if (productNameTemp.length >= 2 && (productNameTemp[1].toUpperCase() == " MEN'S" || productNameTemp[1].toUpperCase() == " WOMEN'S")) {
+                    if (productNameTemp.length >= 2) {
+                        jq("#productName").html("<span>" + productNameTemp[0] + "</span> - <span style='color:#" + color + ";'>" + productNameTemp[1] + "</span>");
+                    } else {
+                        jq("#productName").html("<span>" + productNameTemp + "</span>");
+                    }
+                }
+                jq(".list_items").append('<div class="expand"></div>');
+                jq(".list_items").append('<div class="overlay"></div>');
+                jq(".list_items").on("click", ".expand", function(e) {
+                    e.stopImmediatePropagation() //();
+                    e.preventDefault();
+
+                    $(".expand").css("background-position", "-22px");
+
+                    jq(".expand").addClass('collapse').removeClass('expand');
+                    jq(".overlay").animate({
+                        'width': '150px',
+                        "height": '118px'
+                    }, function() {
+                        var price = jq(".list_items:not(.bx-clone)").eq(customGallery.getCurrentSlide()).find("img").data("price");
+                        //displaying price in opverlay
+                        $(".overlay").html("<div class='price' style='display:none'>" + price + "</div>");
+                        $(".price").fadeIn();
+                    });
+
+
+
+
+                });
+                jq(".list_items").on("click", ".collapse", function(e) {
+
+                    e.stopPropagation();
+                    e.preventDefault();
+                    $(".collapse").css("background-position", "0px");
+                    jq(".collapse").addClass('expand').removeClass('collapse');
+                    jq(".overlay").animate({
+                        'width': '0px',
+                        "height": '0px'
+                    });
+
+                    jq(".price").remove()
+
+
+                });
+            }
+            var image_db = jvxAd.assetDBReq('REIMarFeed').keys(groupName).max(4).order('random').orderBy('image_link').build();
+            if (typeof typeof getData !== "undefined") {
+                jvxAd.dynamicDataCallback("getData").get(image_db);
+            }
+            if (jq("#snowImg").length == 1) {
+                var snowImg_container = document.createElement('div');
+                snowImg_container.setAttribute("id", "snowImg_container");
+                document.getElementById('maincontainer').appendChild(snowImg_container);
+                snowImg_container.appendChild(document.getElementById('snowImg'));
+            } else if (jq("#rainImg").length == 1) {
+                var rainImg_container = document.createElement('div');
+                rainImg_container.setAttribute("id", "rainImg_container");
+                document.getElementById('maincontainer').appendChild(rainImg_container);
+                rainImg_container.appendChild(document.getElementById('rainImg'));
+            }
+            jq('#maincontainer').css({
+                opacity: 0
+            });
+            (function checkifImagesLoaded() {
+                if (self.defaults.totalImageCount === self.defaults.totalImagesLoaded) {
+                    setTimeout(function() {
+                        jq('#bgImg').css({
+                            top: 0
+                        });
+                        jq('#headline').css({
+                            top: (parent.layoutObj.layoutHeight - jq('#headline').height()) / 2
+                        });
+                        jq('#top_line').css({
+                            top: parseInt(jq("#headline").css("top")) - jq("#top_line").height() - 24
+                        });
+                        jq('#bottom_line').css({
+                            top: parseInt(jq("#headline").css("top")) + jq("#headline").height() + 22
+                        });
+                        if (weatherCondition == 'Default') {
+                            jq("#product1").css({
+                                'left': -(parent.layoutObj.layoutWidth)
+                            });
+                            jq("#product2").css({
+                                'left': (jq("#product1").position().left) * 1.5
+                            });
+                            jq("#product3").css({
+                                'left': (jq("#product2").position().left) * 1.5
+                            });
+                        } else {
+                            jq('#degree').css({
+                                top: 262,
+                                "color": "#" + color
+                            });
+                            jq('#weatherIcon').css({
+                                left: (parseInt(jq('#degree').css("left")) + jq('#degree').width()),
+                                top: 267
+                            });
+                            jq('#city').css({
+                                left: (parseInt(jq('#weatherIcon').css("left")) + jq('#weatherIcon').width()),
+                                top: 264
+                            });
+                            jq('#productName').css({
+                                left: -130
+                            });
+
+                            jq('#productClickArea').css({
+                                top: 250
+                            });
+                        }
+                        jq('#showNowCTA').css({
+                            left: -124,
+                            "background-color": "#" + color
+                        });
+                        jq('#maincontainer').css({
+                            opacity: 1
+                        });
+                        $("<style>.bx-wrapper .bx-pager.bx-default-pager a {background : #d9d9d9; border: 2px solid #d9d9d9;} .bx-wrapper .bx-pager.bx-default-pager a:hover,.bx-wrapper .bx-pager.bx-default-pager a.active,.bx-wrapper .bx-pager.bx-default-pager a:focus { background : #" + color + "; border: 2px solid #" + color + "}</style>").appendTo("body");
+
+                        switch (color) {
+                            case "64ccc9":
+                                $("<style>.bx-wrapper .bx-prev { background: url('//cdn.jivox.com/files/33270/REI/images/CarouselAssets/300x250/300x250_left_arrow_64ccc9.png') no-repeat; } .bx-wrapper .bx-next { background: url('//cdn.jivox.com/files/33270/REI/images/CarouselAssets/300x250/300x250_right_arrow_64ccc9.png') no-repeat; }</style>").appendTo("body");
+                                $(".expand,.collapse").css("background", "url('//cdn.jivox.com/files/33270/REI/images/CarouselAssets/300x250/300x250_expand_collapse_64ccc9.png') no-repeat")
+                                break;
+                            case "d9c756":
+                                $("<style>.bx-wrapper .bx-prev { background: url('//cdn.jivox.com/files/33270/REI/images/CarouselAssets/300x250/300x250_left_arrow_d9c756.png') no-repeat; } .bx-wrapper .bx-next { background: url('//cdn.jivox.com/files/33270/REI/images/CarouselAssets/300x250/300x250_right_arrow_d9c756.png') no-repeat; }</style>").appendTo("body");
+                                $(".expand,.collapse").css("background", "url('//cdn.jivox.com/files/33270/REI/images/CarouselAssets/300x250/300x250_expand_collapse_d9c756.png') no-repeat")
+                                break;
+                            default:
+                                $("<style>.bx-wrapper .bx-prev { background: url('//cdn.jivox.com/files/33270/REI/images/CarouselAssets/300x250/300x250_left_arrow_a7a7a2.png') no-repeat; } .bx-wrapper .bx-next { background: url('//cdn.jivox.com/files/33270/REI/images/CarouselAssets/300x250/300x250_right_arrow_a7a7a2.png') no-repeat; }</style>").appendTo("body");
+                                $(".expand,.collapse").css("background", "url('//cdn.jivox.com/files/33270/REI/images/CarouselAssets/300x250/300x250_expand_collapse_a7a7a2.png') no-repeat")
+                        }
+
+
+                        //Click-throughs
+
+                        jq('#bodyClickArea').on("click", function(e) {
+                            e.stopPropagation();
+                            e.preventDefault();
+                            if(window.customGallery != undefined){
+                            	 window.customGallery.stopAuto();
+                            }
+                           
+                            //console.log("ClickThrough");
+                            jvxAd.openClickThrough();
+                        });
+
+                        jq('#productClickArea').on("click", function(e) {
+                            e.stopPropagation();
+                            e.preventDefault();
+                            if(window.customGallery != undefined){
+                            	 window.customGallery.stopAuto();
+                            }
+                            //console.log("ClickThrough");
+                            productClickThrough();
+                        });
+
+                        $("#list_0,#list_1,#list_2,#list_3,#list_4,.overlay").on("click", function(e) {
+
+                            productClickThrough();
+                        })
+
+
+
+                        self.startAnimation();
+                    }, 300);
+                } else {
+                    setTimeout(checkifImagesLoaded, 500)
+                }
+            }());
+        }
+        self.startAnimation = function() {
+            var backgroundAnimate = (function bgFunc() {
+
+                function cloudysunnyanim() {
+                    jq("#cloudsSpriteContainer").delay(4100).animate({
+                        "top": "-190px"
+                    }, 7e2, "easeInOutCirc");
+
+                    jq("#productClickArea").delay(4100).animate({
+                        "top": "60px"
+                    }, 7e2, "easeInOutCirc");
+
+                    jq("#bodyClickArea").delay(4100).animate({
+                        "top": "-190px"
+                    }, 7e2, "easeInOutCirc");
+
+
+                    jq("#bgImg").delay(4100).animate({
+                        "top": "-190px"
+                    }, 7e2, "easeInOutCirc", function() {
+                        jq("#productImg").animate({
+                            "right": "12px"
+                        }, 7e2, "easeOutExpo");
+                        jq("#productName").animate({
+                            "left": "12px"
+                        }, 7e2, "easeOutExpo");
+                        jq("#showNowCTA").delay(300).animate({
+                            "left": "12px"
+                        }, 1e3, "easeOutExpo", function() {
+                            jq(this).css({
+                                'z-index': '2'
+                            });
+                        });
+                        createSlider();
+                    });
+                }
+
+                function snowyRainyAnimation() {
+                    jq("#bodyClickArea").delay(4100).animate({
+                        "top": "-190px"
+                    }, 7e2, "easeInOutCirc");
+                    jq("#productClickArea").delay(4100).animate({
+                        "top": "60px"
+                    }, 7e2, "easeInOutCirc");
+
+                    jq("#bgImg").delay(4100).animate({
+                        "top": "-190px"
+                    }, {
+                        duration: 7e2,
+                        easing: "easeInOutCirc",
+                        step: function(now, fx) {
+                            if (parseInt(now) == -(jq("#bgImg > img").height() - parent.layoutObj.layoutHeight)) {
+                                jq("#productImg").animate({
+                                    "right": "12px"
+                                }, 7e2, "easeOutExpo");
+                                jq("#productName").animate({
+                                    "left": "12px"
+                                }, 7e2, "easeOutExpo");
+                                jq("#showNowCTA").delay(300).animate({
+                                    "left": "12px"
+                                }, 1e3, "easeOutExpo", function() {
+                                    jq(this).css({
+                                        'z-index': '2'
+                                    });
+                                    createSlider();
+                                });
+                            }
+                        }
+                    });
+                    if (jq("#snowImg_container").length == 1) {
+                        jq("#snowImg_container").delay(4100).animate({
+                            "top": "-190px"
+                        }, 7e2, "easeInOutCirc");
+                        jq("#snowImg > img").delay(4100).animate({
+                            "opacity": 0
+                        }, 8e2, "linear");
+                    } else {
+                        jq("#rainImg_container").delay(4100).animate({
+                            "top": "-190px"
+                        }, 7e2, "easeInOutCirc");
+                        jq("#rainImg > img").delay(4200).animate({
+                            "opacity": 0
+                        }, 9e2, "linear");
+                        jq("#rainSmudgeImg").delay(4100).animate({
+                            "opacity": 0,
+                            "top": "-190px"
+                        }, 7e2, "easeInOutCirc");
+                    }
+                }
+
+                function defaultCreative() {
+                    jq('#showNowCTA').css({
+                        "top": "190px",
+                        "left": "321px",
+                        "background-color": "#" + color
+                    });
+                    jq("#bgImg").delay(4100).animate({
+                        "top": -190
+                    }, 520, "easeInOutCirc", function() {
+                        jq("#product1").animate({
+                            "left": parent.layoutObj.layoutWidth * 3
+                        }, 3e3, "linear");
+                        jq("#product2").animate({
+                            "left": parent.layoutObj.layoutWidth * 2.5
+                        }, 3e3, "linear");
+                        jq("#product3").animate({
+                            "left": parent.layoutObj.layoutWidth * 1
+                        }, 3e3, "linear", function() {
+                            jq("#headline").animate({
+                                top: 80
+                            }, 520, "easeInOutCirc");
+                            jq('#top_line').animate({
+                                top: 80 - jq("#top_line").height() - 24
+                            }, 520, "easeInOutCirc");
+                            jq('#bottom_line').animate({
+                                top: 80 + jq("#headline").height() + 22
+                            }, 520, "easeInOutCirc");
+                            jq("#bgImg").animate({
+                                "top": "0px"
+                            }, 520, "easeInOutCirc", function() {
+                                jq("#showNowCTA").delay(300).animate({
+                                    "left": "90px"
+                                }, 7e2, function() {
+                                    jq(this).css({
+                                        'z-index': '2'
+                                    });
+                                });
+                            });
+                            jq("#logo").animate({
+                                "top": "185px"
+                            }, 520, "easeInOutCirc");
+                        });
+                    });
+                    jq("#logo").delay(4100).animate({
+                        "top": "-5px"
+                    }, 520, "easeInOutCirc");
+                }
+
+                function createSlider() {
+                    var slideCounter = 1; //
+                    window["custGalleryEvents"] = {
+
+                        onSliderLoad: function() {
+                        	if (jq(".bx-pager-item").length == 1) {
+                        		$(".bx-pager-item").css("left", "500px");
+                        	}
+                            $(".bx-pager-item").css("width", "14px")
+                            $(".bx-pager-link").css("margin", "auto");
+                        },
+                        onSlideBefore: function(data, dd) {
+                            //console.log(slideCounter)
+                            $(".collapse").css("background-position", "0px");
+                            if (slideCounter >= (customGallery.getSlideCount() * 3))
+                                window.customGallery.stopAuto()
+
+                            slideCounter++;
+
+
+                            //console.log(customGallery.getSlideCount())
+
+                            jq(".price").remove()
+                            var index = customGallery.getCurrentSlide();
+                            var productNameTemp = jq(".list_items:not(.bx-clone)").eq(index).find("img").data("title").split(" - ");
+
+
+							//if (productNameTemp.length >= 2 && (productNameTemp[1].toUpperCase() == " MEN'S" || productNameTemp[1].toUpperCase() == " WOMEN'S")) {
+                            if (productNameTemp.length >= 2) {
+
+                                jq("#productName").html("<span>" + productNameTemp[0] + "</span> - <span style='color:#" + color + ";'>" + productNameTemp[1] + "</span>");
+                            } else {
+                                jq("#productName").html("<span>" + productNameTemp + "</span>");
+                            }
+
+                            jq(".overlay").css({
+                                'width': '0px',
+                                'height': '0px'
+                            });
+                            jq(".collapse").addClass('expand').removeClass('collapse');
+
+                        },
+
+                        onSlideClick: function(e) {
+                            window.customGallery.stopAuto()
+                                //	productClickThrough();
+
+                        },
+                        onSlideAfter: function() {
+
+
+
+                        }
+
+                    }
+                    //if (jq(".list_items").length > 0) {
+                        var customGall = document.createElement("script");
+                        customGall.type = "text/javascript";
+                        customGall.src = "//jivoxassets.s3.amazonaws.com/asset/2016/10/33270-0-ajs5809e94c35119.js"; ////jivoxcreatives.s3.amazonaws.com/2016/Aug/REI/300X250/customGalleryWidget_v2.js
+                        document.body.appendChild(customGall);
+                    //}
+
+                    //
+
+                }
+                var anim;
+                switch (weatherCondition) {
+                    case "Cloudy":
+                        {
+                            if (cloudsSpriteImage != "") {
+                                var currentFrame = 0,
+                                    width = 300,
+                                    spriteWidth = (9000 * 3) - width;
+                                jq("#unitBorder").css({
+                                    "line-height": 0
+                                }).delay(500).animate({
+                                    "line-height": (spriteWidth / width)
+                                }, {
+                                    duration: ((spriteWidth / width) * 67),
+                                    easing: "linear",
+                                    step: function(now, fx) {
+                                        currentFrame = (parseInt(now) * width) * -1;
+                                        if (currentFrame > -9000) {
+                                            jq("#cloudsSpriteContainer img").css({
+                                                'left': currentFrame + 'px'
+                                            })
+                                        } else if (currentFrame > -18000 && currentFrame <= -9000) {
+                                            jq("#cloudsSpriteContainer img").css({
+                                                'left': (currentFrame + 9000) + 'px'
+                                            })
+                                        } else {
+                                            jq("#cloudsSpriteContainer img").css({
+                                                'left': (currentFrame + 18000) + 'px'
+                                            })
+                                        }
+                                    }
+                                });
+                            }
+                            anim = cloudysunnyanim;
+                            break;
+                        }
+                    case "Sunny":
+                        {
+                            jq("#blue1 img").delay(1267 + 500).animate({
+                                "opacity": "0.33",
+                                "top": "90px",
+                                "left": "74px"
+                            }, 433, "linear", function() {
+                                jq(this).animate({
+                                    "opacity": "0.37",
+                                    "top": "103px",
+                                    "left": "117px",
+                                    "width": "108px",
+                                    "height": "116px"
+                                }, 33, "linear", function() {
+                                    jq(this).animate({
+                                        "opacity": "0.56",
+                                        "top": "104px",
+                                        "left": "158px",
+                                        "width": "114px",
+                                        "height": "122px"
+                                    }, 167, "linear", function() {
+                                        jq(this).animate({
+                                            "opacity": "0.90",
+                                            "top": "105px",
+                                            "left": "183px",
+                                            "width": "117px",
+                                            "height": "126px"
+                                        }, 100, "linear", function() {
+                                            jq(this).animate({
+                                                "opacity": "0.67",
+                                                "top": "105px",
+                                                "left": "191px",
+                                                "width": "117px",
+                                                "height": "126px"
+                                            }, 33, "linear", function() {
+                                                jq(this).animate({
+                                                    "opacity": "0.22",
+                                                    "top": "121px",
+                                                    "left": "225px",
+                                                    "width": "99px",
+                                                    "height": "106px"
+                                                }, 67, "linear", function() {
+                                                    jq(this).animate({
+                                                        "opacity": "0.35",
+                                                        "top": "144px",
+                                                        "left": "275px",
+                                                        "width": "70px",
+                                                        "height": "76px"
+                                                    }, 100, "linear", function() {
+                                                        jq(this).animate({
+                                                            "opacity": "0"
+                                                        }, 67, "linear", function() {});
+                                                    });
+                                                });
+                                            });
+                                        });
+                                    });
+                                });
+                            });
+                            jq("#blue2 img").delay(1267 + 500).animate({
+                                "opacity": "0.21",
+                                "top": "2px",
+                                "left": "99px"
+                            }, 433, "linear", function() {
+                                jq(this).animate({
+                                    "opacity": "0.41",
+                                    "top": "0px",
+                                    "left": "170px",
+                                    "width": "117px",
+                                    "height": "124px"
+                                }, 33, "linear", function() {
+                                    jq(this).animate({
+                                        "opacity": "0.57",
+                                        "top": "16px",
+                                        "left": "160px",
+                                        "width": "106px",
+                                        "height": "113px"
+                                    }, 167, "linear", function() {
+                                        jq(this).animate({
+                                            "opacity": "0.63",
+                                            "top": "39px",
+                                            "left": "178px",
+                                            "width": "98px",
+                                            "height": "104px"
+                                        }, 67, "linear", function() {
+                                            jq(this).animate({
+                                                "opacity": "0.10",
+                                                "top": "118px",
+                                                "left": "240px",
+                                                "width": "70px",
+                                                "height": "76px"
+                                            }, 233, "linear", function() {
+                                                jq(this).animate({
+                                                    "opacity": "0"
+                                                }, 67, "linear", function() {});
+                                            });
+                                        });
+                                    });
+                                });
+                            });
+                            jq("#white1 img").delay(1233 + 500).animate({
+                                "opacity": "0.20",
+                                "top": "21px",
+                                "left": "53px"
+                            }, 233, "linear", function() {
+                                jq(this).animate({
+                                    "opacity": "0.20",
+                                    "top": "21px",
+                                    "left": "64px"
+                                }, 33, "linear", function() {
+                                    jq(this).animate({
+                                        "opacity": "0.86",
+                                        "top": "22px",
+                                        "left": "120px"
+                                    }, 167, "linear", function() {
+                                        jq(this).animate({
+                                            "opacity": "0.29",
+                                            "top": "22px",
+                                            "left": "131px"
+                                        }, 33, "linear", function() {
+                                            jq(this).animate({
+                                                "opacity": "0.32",
+                                                "top": "22px",
+                                                "left": "165px"
+                                            }, 100, "linear", function() {
+                                                jq(this).animate({
+                                                    "opacity": "0.35",
+                                                    "top": "22px",
+                                                    "left": "166px",
+                                                    "width": "134px",
+                                                    "height": "114px"
+                                                }, 100, "linear", function() {
+                                                    jq(this).animate({
+                                                        "opacity": "0.62",
+                                                        "top": "20px",
+                                                        "left": "168px",
+                                                        "width": "163px",
+                                                        "height": "139px"
+                                                    }, 133, "linear", function() {
+                                                        jq(this).animate({
+                                                            "opacity": "0.28",
+                                                            "top": "44px",
+                                                            "left": "219px",
+                                                            "width": "138px",
+                                                            "height": "117px"
+                                                        }, 67, "linear", function() {
+                                                            jq(this).animate({
+                                                                "opacity": "0.45",
+                                                                "top": "79px",
+                                                                "left": "295px",
+                                                                "width": "100px",
+                                                                "height": "86px"
+                                                            }, 100, "linear", function() {
+                                                                jq(this).animate({
+                                                                    "opacity": "0"
+                                                                }, 67, "linear", function() {});
+                                                            });
+                                                        });
+                                                    });
+                                                });
+                                            });
+                                        });
+                                    });
+                                });
+                            });
+                            jq("#sun1 img").delay(267 + 500).animate({
+                                "opacity": "0.32"
+                            }, 433, "linear", function() {
+                                jq(this).animate({
+                                    "opacity": "0.4"
+                                }, 400, "linear", function() {
+                                    jq(this).animate({
+                                        "opacity": "0.17"
+                                    }, 167, "linear", function() {
+                                        jq(this).animate({
+                                            "opacity": "0.5"
+                                        }, 333, "linear", function() {
+                                            jq(this).animate({
+                                                "opacity": "0.19",
+                                                "top": "-232px",
+                                                "left": "-60px",
+                                                "width": "362px",
+                                                "height": "370px"
+                                            }, 167, "linear", function() {
+                                                jq(this).animate({
+                                                    "opacity": "0.48",
+                                                    "top": "-168px",
+                                                    "left": "100px",
+                                                    "width": "400px",
+                                                    "height": "388px"
+                                                }, 100, "linear", function() {
+                                                    jq(this).animate({
+                                                        "opacity": "0.51",
+                                                        "top": "-84px",
+                                                        "left": "138px",
+                                                        "width": "312px",
+                                                        "height": "302px"
+                                                    }, 200, "linear", function() {
+                                                        jq(this).animate({
+                                                            "opacity": "0.34",
+                                                            "top": "-28",
+                                                            "left": "164px",
+                                                            "width": "254px",
+                                                            "height": "244px"
+                                                        }, 133, "linear", function() {
+                                                            jq(this).animate({
+                                                                "opacity": "0"
+                                                            }, 67, "linear", function() {});
+                                                        });
+                                                    });
+                                                });
+                                            });
+                                        });
+                                    });
+                                });
+                            });
+                            jq("#sun2 img").delay(267 + 500).animate({
+                                "opacity": "0.4"
+                            }, 433, "linear", function() {
+                                jq(this).animate({
+                                    "opacity": "0.08"
+                                }, 467, "linear", function() {
+                                    jq(this).animate({
+                                        "opacity": "0.08"
+                                    }, 367, "linear", function() {
+                                        jq(this).animate({
+                                            "opacity": "0.17"
+                                        }, 233, "linear", function() {
+                                            jq(this).animate({
+                                                "opacity": "0.48",
+                                                "top": "-168px",
+                                                "left": "24px",
+                                                "width": "476px",
+                                                "height": "418px"
+                                            }, 133, "linear", function() {
+                                                jq(this).animate({
+                                                    "opacity": "0.91",
+                                                    "top": "-210px",
+                                                    "left": "0px",
+                                                    "width": "446px",
+                                                    "height": "438px"
+                                                }, 133, "linear", function() {
+                                                    jq(this).animate({
+                                                        "opacity": "0.33",
+                                                        "top": "-28px",
+                                                        "left": "84px",
+                                                        "width": "332px",
+                                                        "height": "278px"
+                                                    }, 166, "linear", function() {
+                                                        jq(this).animate({
+                                                            "opacity": "0"
+                                                        }, 67, "linear", function() {});
+                                                    });
+                                                });
+                                            });
+                                        });
+                                    });
+                                });
+                            });
+                            anim = cloudysunnyanim;
+                            break;
+                        }
+                    case 'Snowy':
+                        {
+                            jq("#snowImg").animate({
+                                "top": "0px"
+                            }, 7e3, "linear");
+                            anim = snowyRainyAnimation;
+                            break;
+                        }
+                    case 'Rainy':
+                        {
+                            var range = [7, 10],
+                                randomNumber = Math.floor(Math.random() * ((range[1] - range[0]) + 1) + range[0]),
+                                opacityRange = [0.1, 1],
+                                opacRandomRange = Math.random() * (opacityRange[1] - opacityRange[0]) + opacityRange[0],
+                                smudges = jq("#rainSmudgeImg > img");
+                            jq("#rainImg").animate({
+                                "top": "0px"
+                            }, 7e3, "linear");
+                            for (i = 1; i <= randomNumber; i++) {
+                                var showSmudgeTime = 500 * i;
+                                jq(smudges).clone().insertAfter(smudges).fadeIn(showSmudgeTime).css({
+                                    "position": "absolute",
+                                    "left": (Math.random() * (parent.layoutObj.layoutWidth - 20)).toFixed() + "px",
+                                    "top": (Math.random() * (parent.layoutObj.layoutHeight - 20)).toFixed() + "px",
+                                    "opacity": opacRandomRange
+                                });
+                            }
+                            anim = snowyRainyAnimation;
+                            break;
+                        }
+                    default:
+                        anim = defaultCreative;
+                }
+                return anim;
+            }());
+            var tl = parseInt(jq("#top_line").css("top"));
+            var hl = parseInt(jq("#headline").css("top"));
+            var bl = parseInt(jq("#bottom_line").css("top"));
+            var tl_ep = (tl - 190);
+            var hl_ep = (hl - 190);
+            var bl_ep = (bl - 190);
+            if (weatherCondition != 'Default') {
+                jq("#headline").delay(1300).animate({
+                    "left": "0px"
+                }, 420, "easeOutExpo");
+                jq("#top_line").delay(1500).animate({
+                    "left": "113px"
+                }, 520, "easeOutExpo");
+                jq("#bottom_line").delay(1500).animate({
+                    "left": "113px"
+                }, 520, "easeOutExpo", function() {
+                    backgroundAnimate();
+                    jq("#top_line").delay(4100).animate({
+                        top: tl_ep
+                    }, 7e2, "easeInOutCirc");
+                    jq("#headline").delay(4100).animate({
+                        top: hl_ep
+                    }, 7e2, "easeInOutCirc");
+                    jq("#bottom_line").delay(4100).animate({
+                        top: bl_ep
+                    }, 7e2, "easeInOutCirc");
+                    jq("#logo").delay(4100).animate({
+                        "top": "-5px"
+                    }, 7e2, "easeInOutCirc");
+                    jq('#degree').delay(4100).animate({
+                        "top": "66px"
+                    }, 7e2, "easeInOutCirc");
+                    jq('#weatherIcon').delay(4100).animate({
+                        "top": "71px"
+                    }, 7e2, "easeInOutCirc");
+                    jq('#city').delay(4100).animate({
+                        top: 68
+                    }, 7e2, "easeInOutCirc");
+                });
+            } else {
+                jq("#headline").css({
+                    "top": "80px"
+                });
+                jq('#top_line').css({
+                    top: parseInt(jq("#headline").css("top")) - jq("#top_line").height() - 22
+                });
+                jq('#bottom_line').css({
+                    top: parseInt(jq("#headline").css("top")) + jq("#headline").height() + 22
+                });
+                jq("#headline").delay(1300).animate({
+                    "left": "0px"
+                }, 420, "easeOutExpo");
+                jq("#top_line").delay(1500).animate({
+                    "left": "113px"
+                }, 520, "easeOutExpo");
+                jq("#bottom_line").delay(1500).animate({
+                    "left": "113px"
+                }, 520, "easeOutExpo", function() {
+                    backgroundAnimate();
+                    jq("#top_line").delay(4100).animate({
+                        top: tl_ep
+                    }, 520, "easeInOutCirc");
+                    jq("#headline").delay(4100).animate({
+                        top: hl_ep
+                    }, 520, "easeInOutCirc");
+                    jq("#bottom_line").delay(4100).animate({
+                        top: bl_ep
+                    }, 520, "easeInOutCirc");
+                });
+            }
+        }
+        self.fireEvent = function(eventName, eventType) {
+            jvxAd.recordEventByName(eventName + " - " + eventType, (eventType.indexOf("Imp") > -1) ? 0 : 1);
+        };
+        self.createElem = function(tag, attrs, txtContent, parentcontainer) {
+            if (typeof parentcontainer == "undefined") parentcontainer = self.defaults.container;
+            var newEl = jq("<" + tag + "/>").appendTo(parentcontainer).attr(attrs).html(txtContent);
+            if (tag == "img") {
+                jq(newEl).on("load", function() {
+                    self.defaults.totalImagesLoaded = (self.defaults.totalImagesLoaded == null) ? 1 : self.defaults.totalImagesLoaded + 1;
+                })
+            }
+            return newEl;
+        }
+        self.generateLayout = function() {
+            jq.each((function() {
+                if (weatherCondition == "Cloudy") return self.defaults.cloudyData
+                else if (weatherCondition == "Snowy") return self.defaults.snowyData
+                else if (weatherCondition == "Sunny") return self.defaults.sunnyData
+                else if (weatherCondition == "Rainy") return self.defaults.rainyData
+                else return self.defaults.defaultData
+            }()), function(key, value) {
+                value = decodeURIComponent(value);
+                value = value.replace(/{{/g, "<p/>");
+                self.createElem("div", {
+                    'id': key
+                }, (function() {
+                    if (value.indexOf("//") != -1) {
+                        self.defaults.totalImageCount++;
+                        return self.createElem("img", {
+                            'src': value
+                        });
+                    }
+                    return value;
+                }()));
+            });
+            self.alignLayout();
+        }
+        self.init = function() {
+            if ("undefined" != typeof REIMarFeedData && REIMarFeedData.length > 0) {
+                groupName = REIMarFeedData[0]["_jvxRtnGroup"];
+            } else {
+                groupName = "Default_Creative";
+            }
+            window["creativeDataHandler"] = function(result) {
+                reiCreativeData = result[Object.keys(result)[0]][0];
+                color = reiCreativeData["color"];
+                category = reiCreativeData["category"];
+                temperature = (typeof dynamicData['weather:weather.temp'] !== "undefined") ? (Math.round(dynamicData['weather:weather.temp'])) : "0";
+                stateName = (typeof dynamicData['geo:geo.city'] !== "undefined") ? (dynamicData['geo:geo.state']) : "NA";
+                cityName = (typeof dynamicData['geo:geo.city'] !== "undefined") ? (dynamicData['geo:geo.city'] + ", " + stateName) : "NA";
+                cloudsSpriteImage = (groupName.search("Cloudy_Range_50_70") != -1 && category == "General") ? "//cdn.jivox.com/files/33270/REI/images/CommonAssets/300x250/Cloudy/300x250_Cloudy_Range_50_70_Sprite_v1.jpg" : ((groupName.search("Cloudy_Greater_70") != -1 && category == "General") ? "//cdn.jivox.com/files/33270/REI/images/CommonAssets/300x250/Cloudy/300x250_Cloudy_Greater_70_Sprite_v1.jpg" : ((groupName.search("Cloudy_Less_50") != -1 && category == "General") ? "//cdn.jivox.com/files/33270/REI/images/CommonAssets/300x250/Cloudy/300x250_Cloudy_Less_50_Sprite_v1.jpg" : ""));
+                weatherCondition = (typeof ap_Weather !== "undefined" && "undefined" !== typeof REIMarFeedData && REIMarFeedData.length >= 1) ? ap_Weather : (("undefined" !== typeof REIMarFeedData && REIMarFeedData.length >= 1) ? reiCreativeData['_assetKey'].split('_')[1] : reiCreativeData['_assetKey'].split('_')[0]);
+                sparkREI.defaults.cloudyData = {
+                    unitBorder: "",
+                    cloudsSpriteContainer: cloudsSpriteImage,
+                    bgImg: reiCreativeData[parent.layoutObj.matchLayoutDim + "_bg"],
+                    logo: reiCreativeData[parent.layoutObj.matchLayoutDim + "_logo"],
+                    headline: reiCreativeData[parent.layoutObj.matchLayoutDim + "_headline"],
+                    top_line: "",
+                    bottom_line: "",
+                    city: cityName,
+                    weatherIcon: reiCreativeData[parent.layoutObj.matchLayoutDim + "_weater_icon"],
+                    degree: temperature + "&deg;",
+                    productImg: "",
+                    productName: "",
+                    showNowCTA: reiCreativeData["cta_copy"],
+                    productClickArea: "",
+                    bodyClickArea: ""
+                };
+                sparkREI.defaults.snowyData = {
+                    unitBorder: "",
+                    bgImg: reiCreativeData[parent.layoutObj.matchLayoutDim + "_bg"],
+                    snowImg: "//cdn.jivox.com/files/33270/REI/images/CommonAssets/300x250/Snowy/snow.png",
+                    top_line: "",
+                    logo: reiCreativeData[parent.layoutObj.matchLayoutDim + "_logo"],
+                    bottom_line: "",
+                    headline: reiCreativeData[parent.layoutObj.matchLayoutDim + "_headline"],
+                    city: cityName,
+                    weatherIcon: reiCreativeData[parent.layoutObj.matchLayoutDim + "_weater_icon"],
+                    degree: temperature + "&deg;",
+                    productImg: "",
+                    productName: "",
+                    showNowCTA: reiCreativeData["cta_copy"],
+                    productClickArea: "",
+                    bodyClickArea: ""
+                };
+                sparkREI.defaults.sunnyData = {
+                    unitBorder: "",
+                    bgImg: reiCreativeData[parent.layoutObj.matchLayoutDim + "_bg"],
+                    sun2: "//cdn.jivox.com/files/33270/REI/images/CommonAssets/300x250/Sunny/300x250_sun2.png",
+                    sun1: "//cdn.jivox.com/files/33270/REI/images/CommonAssets/300x250/Sunny/300x250_sun1.png",
+                    white1: "//cdn.jivox.com/files/33270/REI/images/CommonAssets/300x250/Sunny/300x250_white1.png",
+                    blue2: "//cdn.jivox.com/files/33270/REI/images/CommonAssets/300x250/Sunny/300x250_blue2.png",
+                    blue1: "//cdn.jivox.com/files/33270/REI/images/CommonAssets/300x250/Sunny/300x250_blue1.png",
+                    top_line: "",
+                    logo: reiCreativeData[parent.layoutObj.matchLayoutDim + "_logo"],
+                    bottom_line: "",
+                    headline: reiCreativeData[parent.layoutObj.matchLayoutDim + "_headline"],
+                    city: cityName,
+                    weatherIcon: reiCreativeData[parent.layoutObj.matchLayoutDim + "_weater_icon"],
+                    degree: temperature + "&deg;",
+                    productImg: "",
+                    productName: "",
+                    showNowCTA: reiCreativeData["cta_copy"],
+                    productClickArea: "",
+                    bodyClickArea: ""
+                };
+                sparkREI.defaults.rainyData = {
+                    unitBorder: "",
+                    bgImg: reiCreativeData[parent.layoutObj.matchLayoutDim + "_bg"],
+                    rainImg: "//cdn.jivox.com/files/33270/REI/images/CommonAssets/300x250/Rainy/rain_long_drops_v3.png",
+                    rainSmudgeImg: "//cdn.jivox.com/files/33270/REI/images/CommonAssets/300x250/Rainy/drop.png",
+                    top_line: "",
+                    logo: reiCreativeData[parent.layoutObj.matchLayoutDim + "_logo"],
+                    bottom_line: "",
+                    headline: reiCreativeData[parent.layoutObj.matchLayoutDim + "_headline"],
+                    city: cityName,
+                    weatherIcon: reiCreativeData[parent.layoutObj.matchLayoutDim + "_weater_icon"],
+                    degree: temperature + "&deg;",
+                    productImg: "",
+                    productName: "",
+                    showNowCTA: reiCreativeData["cta_copy"],
+                    productClickArea: "",
+                    bodyClickArea: ""
+                };
+                sparkREI.defaults.defaultData = {
+                    unitBorder: "",
+                    bgImg: reiCreativeData[parent.layoutObj.matchLayoutDim + "_bg"],
+                    logo: reiCreativeData[parent.layoutObj.matchLayoutDim + "_logo"],
+                    top_line: "",
+                    headline: reiCreativeData[parent.layoutObj.matchLayoutDim + "_headline"],
+                    bottom_line: "",
+                    product1: "//cdn.jivox.com/files/33270/REI/images/CommonAssets/default_products/884614_Garmin_Fenix_GPS_Watch.jpg",
+                    product2: "//cdn.jivox.com/files/33270/REI/images/CommonAssets/default_products/886299_Garmin_Vivofit.jpg",
+                    product3: "//cdn.jivox.com/files/33270/REI/images/CommonAssets/default_products/882144_GoPro_Hero4_1.jpg",
+                    showNowCTA: reiCreativeData["cta_copy"],
+                    bodyClickArea: ""
+                }
+                self.generateLayout();
+            }
+            jvxAd.getDynamicService("REICreativeMar:REICreativeMar", "ap_REICreativeMar=" + groupName, "creativeDataHandler");
+        }
+    
+    function productClickThrough() {
+        self.fireEvent(jq(".list_items:not(.bx-clone)").eq(customGallery.getCurrentSlide()).find("img").data("title").replace(/[^a-zA-Z0-9]/g, '_'), "Click");
+        var link = jq(".list_items:not(.bx-clone)").eq(customGallery.getCurrentSlide()).find("img").data("productLinkURL");
+        jvxAd.openClickThrough(link)
+      
+
+    }
+    }).apply(sparkREI);
+    return sparkREI.init; // Start
+}(window, jQuery));

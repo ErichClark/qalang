@@ -1,0 +1,11 @@
+<li><a href="zh/.html">中文</a></li>
+
+<li><a href="../.html">US</a></li>
+
+<form method="POST" action="http://formspree.io/info@qalang.com">
+  <input type="email" name="email" placeholder="Your email">
+  <input type="subject" name="subject" placeholder="Subject">
+  <textarea name="message" placeholder="Your message"></textarea>
+  <button type="submit">Send</button>
+</form>
+

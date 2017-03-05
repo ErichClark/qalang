@@ -1,0 +1,188 @@
+
+/***************
+START MQs #1
+***************/
+@media handheld and (max-width: 770px),
+   screen and (max-device-width: 770px),
+   screen and (max-width: 770px) 
+	{
+
+
+.menubar	 { min-width: 300px; }
+
+.pagewrapper	 {
+		 min-width: 750px;
+		 background-image: none;
+		 background-repeat: no-repeat;
+		 }
+
+#contentbox	{ max-width: 100%; }
+
+#left-content 	 { max-width: 479px; }
+
+#sidebar-content { max-width: 270px; }
+
+.content-area	 { padding: 30px 20px 20px 10px; }
+
+.content-sidebar { padding: 20px 10px 20px 20px; }
+
+#date-location	 { left: 5px; top: 125px; }
+
+
+	}
+/***************
+END MQs #1
+***************/
+
+
+
+
+
+/***************
+START MQs #2
+***************/
+@media handheld and (max-width: 610px),
+   screen and (max-device-width: 610px),
+   screen and (max-width: 610px) 
+	{
+
+.pagewrapper-vis { min-width: 300px; }
+
+.h-img2		{ display: none; }
+
+#searchpop	{ background-image: none; }
+
+#searchbar	{ display: none; }
+
+.copyright	{ font-size: 11px; text-align: center; padding: 10px; }
+
+#date-location	{ display: none; }
+
+.repimage	{ width: 100%; }
+
+.hidemobile610	{ display: none; }
+
+	}
+/***************
+END MQs #2
+***************/
+
+
+
+
+
+/***************
+START MQs #2
+***************/
+@media handheld and (max-width: 590px),
+   screen and (max-device-width: 590px),
+   screen and (max-width: 590px) 
+	{
+
+.pagewrapper	 { min-width: 300px; }
+
+#left-content 	 { max-width: 100%; }
+
+.content-area	 { padding: 16px 10px 16px 10px; }
+
+.content-sidebar { padding: 10px; }
+
+.footer-right	{ display: none; }
+
+	}
+/***************
+END MQs #2
+***************/
+
+
+
+
+
+
+/***************
+MQs #3
+***************/
+
+@media handheld and (max-width: 482px),
+   screen and (max-device-width: 482px),
+   screen and (max-width: 482px) 
+	{
+
+
+.pageheight	 { min-height: 200px; }
+
+.search-top	{ margin: 2px 0px 0px 10px; }
+
+.stterms	{ width: 150px; }
+
+.hidemobile	{ display: none; }
+
+.visual-box	{ min-height: 250px; }
+
+.page-splits 	{  margin-top: 10px; margin-bottom: 10px; }
+
+.footer-content	{ padding: 25px 20px 25px 10px; }
+
+.formalign	{ margin-left: 10px; }
+
+.rbar-tab	 { display: none; }
+
+
+/* FONTS */
+
+body, div, table { font-size: 12px; line-height: 135%; }
+
+.title		{ font-size: 16px; font-weight: bold; }
+
+.title2		{ font-size: 15px; font-weight: bold; }
+
+.title3		{ font-size: 14px; font-weight: bold; }
+
+.subtitle	{ font-size: 15px; }
+
+.smalltitle, .colortitle { font-size: 14px; font-weight: bold; }
+
+.promotext	{ font-size: 13px; }
+
+.just 		{ text-align: left; }
+
+fieldset legend.scriptpg { font-size: 12px; font-weight: bold; }
+
+
+/* MENU */
+
+.menuicon	{ padding: 7px 3px 7px 3px; }
+
+.menubar	{ min-width: 300px; }
+
+.menu		{ padding: 3px 6px 3px 25px; }
+
+
+	}
+/***************
+END MQs #3
+***************/
+
+
+
+
+
+
+/***************
+MQs #4
+***************/
+
+@media handheld and (max-width: 322px),
+   screen and (max-device-width: 322px),
+   screen and (max-width: 322px) 
+	{
+
+
+.rbar-mobh	 { display: none; }
+
+
+	}
+/***************
+END MQs #4
+***************/
+

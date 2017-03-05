@@ -1,0 +1,33 @@
+document.write('<div class="printhide header">');
+
+document.write('<a href="http://www.allwebco-templates.com/support/"><img src="http://www.allwebco-templates.com/support/picts/logo.png" width="300" height="65" class="h-img1" alt="Allwebco Design Corporation"></a>');
+
+document.write('<a href="http://allwebcodesign.com/" rel="nofollow"><img src="http://allwebco-templates.com/support/picts/header-developer-off.png" width="300" height="65" onmouseover="this.src=\'http://allwebco-templates.com/support/picts/header-developer-on.png\'" onmouseout="this.src=\'http://allwebco-templates.com/support/picts/header-developer-off.png\'" class="h-img2" alt="Developer Grade Websites"></a>');
+
+document.write('<div class="floatclear headerclear"></div>');
+
+document.write('</div>');
+
+document.write('<div id="searchbar" class="printhide">');
+
+document.write('<form method="post" action="http://allwebco-templates.com/cgi-bin/websearch.pl" class="formmargin">');
+document.write('<input type="hidden" name="hits" value="15">');
+document.write('<input type="hidden" name="DateRange" value="All">');
+document.write('<input type="hidden" name="boolean" value="any terms">');
+
+document.write('<table class="search-top"><tr><td>');
+
+document.write('<input type="text" name="terms" size="22" maxlength="150" class="stterms" value=""><br>');
+
+document.write('</td><td>');
+
+document.write('<input type="image" name="sbbutton" width="28" height="28" src="http://www.allwebco-templates.com/support/menu-icons/sbbutton-off.png" class="sbbutton" onmouseover="this.src=\'http://www.allwebco-templates.com/support/menu-icons/sbbutton-on.png\'" onmouseout="this.src=\'http://www.allwebco-templates.com/support/menu-icons/sbbutton-off.png\'" alt="Submit"><br>');
+
+document.write('</td></tr></table>');
+
+document.write('</form>');
+
+document.write('</div>');
+
+
+document.write('<div class="printonly"><a href="http://www.allwebco-templates.com/support/"><img src="http://www.allwebco-templates.com/support/picts/logo-PRINT.jpg" width="300" height="65" class="h-img1" alt="Allwebco Design Corporation"></a></div>');

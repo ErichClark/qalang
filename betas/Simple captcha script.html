@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<!-- saved from url=(0063)http://allwebco-templates.com/support/script-simple-captcha.htm -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<title>Simple captcha script</title>
+<meta name="KeyWords" content="captcha, captcha, captcha, captcha, captcha, captchca, contact form, free tutorial, tutorial, script, validation, human, capcha, captha, protect, hide">
+<meta name="Description" content="Tutorial to add a simple captcha to an HTML contact form. Copy and paste code.">
+
+<meta name="viewport" content="width=device-width">
+
+<link rel="stylesheet" href="./Simple captcha script_files/style-support.css" type="text/css">
+<link rel="stylesheet" href="./Simple captcha script_files/media-queries.css" type="text/css">
+
+<script async="" src="./Simple captcha script_files/analytics.js.download"></script><script type="text/javascript" src="./Simple captcha script_files/jquery-1.11.3.min.js.download"></script>
+<script type="text/javascript" src="./Simple captcha script_files/javascripts.js.download"></script>
+
+
+
+<!-- START CAPTCHA CSS CODE -->
+
+<style type="text/css">
+
+.capbox {
+	background-color: #92D433;
+	border: #B3E272 0px solid;
+	border-width: 0px 12px 0px 0px;
+	display: inline-block;
+	*display: inline; zoom: 1; /* FOR IE7-8 */
+	padding: 8px 40px 8px 8px;
+	}
+
+.capbox-inner {
+	font: bold 11px arial, sans-serif;
+	color: #000000;
+	background-color: #DBF3BA;
+	margin: 5px auto 0px auto;
+	padding: 3px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	}
+
+#CaptchaDiv {
+	font: bold 17px verdana, arial, sans-serif;
+	font-style: italic;
+	color: #000000;
+	background-color: #FFFFFF;
+	padding: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	}
+
+#CaptchaInput { margin: 1px 0px 1px 0px; width: 135px; }
+
+</style>
+
+<!-- END CAPTCHA CSS CODE -->
+
+
+
+</head>
+
+<body>
+<div class="pagewrapper">
+
+<script type="text/javascript" src="./Simple captcha script_files/header-support.js.download"></script><div class="printhide header"><a href="http://www.allwebco-templates.com/support/"><img src="./Simple captcha script_files/logo.png" width="300" height="65" class="h-img1" alt="Allwebco Design Corporation"></a><a href="http://allwebcodesign.com/" rel="nofollow"><img src="./Simple captcha script_files/header-developer-off.png" width="300" height="65" onmouseover="this.src=&#39;http://allwebco-templates.com/support/picts/header-developer-on.png&#39;" onmouseout="this.src=&#39;http://allwebco-templates.com/support/picts/header-developer-off.png&#39;" class="h-img2" alt="Developer Grade Websites" data-pin-nopin="true"></a><div class="floatclear headerclear"></div></div><div id="searchbar" class="printhide"><form method="post" action="http://allwebco-templates.com/cgi-bin/websearch.pl" class="formmargin"><input type="hidden" name="hits" value="15"><input type="hidden" name="DateRange" value="All"><input type="hidden" name="boolean" value="any terms"><table class="search-top"><tbody><tr><td><input type="text" name="terms" size="22" maxlength="150" class="stterms" value=""><br></td><td><input type="image" name="sbbutton" width="28" height="28" src="./Simple captcha script_files/sbbutton-off.png" class="sbbutton" onmouseover="this.src=&#39;http://www.allwebco-templates.com/support/menu-icons/sbbutton-on.png&#39;" onmouseout="this.src=&#39;http://www.allwebco-templates.com/support/menu-icons/sbbutton-off.png&#39;" alt="Submit"><br></td></tr></tbody></table></form></div><div class="printonly"><a href="http://www.allwebco-templates.com/support/"><img src="./Simple captcha script_files/logo-PRINT.jpg" width="300" height="65" class="h-img1" alt="Allwebco Design Corporation"></a></div>
+
+<script type="text/javascript" src="./Simple captcha script_files/menu-support.js.download"></script><div class="printhide"><div class="menubar-color"><div class="menubar"><div id="menu-box"><div id="menu-top"><a href="javascript:toggleDiv(&#39;menu-sub&#39;);"><img src="./Simple captcha script_files/menu-icon.png" width="75" height="50" class="menu-icon" alt="Open Menu"></a></div><div id="menu-sub"><a href="http://www.allwebco-templates.com/support/" class="menu">Home</a><a href="http://allwebco-templates.com/support/about.html" class="menu">About</a><a href="http://allwebco-templates.com/support/search.html" class="menu">Search</a><a href="http://allwebcodesign.com/setup/index.htm" class="menu">HTML Templates</a><a href="http://allwebco.com/features.shtml" class="menu">Web Hosting</a><a href="http://allwebco-templates.com/support/news.html?" class="menu">News</a><a href="http://allwebco-templates.com/support/links.html" class="menu">Links</a><a href="http://www.allwebco-templates.com/support/scripts.html" class="menu">Free Scripts &amp; Addons</a><a href="http://allwebco-templates.com/support/S_contact_us.htm" class="menu">Contact</a></div></div><div class="menu-icon-box"><div class="menuicon"><a href="javascript:toggleLayer(&#39;searchpop&#39;);"><img src="./Simple captcha script_files/icon-search.png" alt="Search"></a></div><div class="menuicon"><a href="https://twitter.com/allwebcodesign" target="_blank"><img src="./Simple captcha script_files/social-twitter.png" alt="Follow us on twitter"></a></div><div class="menuicon"><a href="https://www.facebook.com/allwebcodesign" target="_blank"><img src="./Simple captcha script_files/social-facebook.png" alt="Connect on Facebook"></a></div><div class="menuicon hidemobile"><a href="https://plus.google.com/+Allwebcodesign/" target="_blank"><img src="./Simple captcha script_files/social-googleplus.png" alt="Check us on Google Plus"></a></div><div class="menuicon"><a href="http://allwebco-templates.com/support/S_contact_us.htm" target="_top"><img src="./Simple captcha script_files/icon-contact.png" alt="Contact Us"></a></div><div class="menuicon"><a href="http://www.allwebco-templates.com/support/" target="_top"><img src="./Simple captcha script_files/icon-home.png" alt="Home"></a></div></div></div></div></div><div class="floatclear menuclear"></div><div id="searchpop" class="printhide"><form method="post" action="http://allwebco-templates.com/cgi-bin/websearch.pl" onsubmit="return submitForm(this.submitbutton)" name="application" class="formmargin"><input type="hidden" name="hits" value="15"><input type="hidden" name="DateRange" value="All"><table class="search-top"><tbody><tr><td><input type="text" name="terms" size="22" maxlength="150" class="stterms" value=""><br><input type="radio" name="boolean" value="any terms" checked="">broad <input type="radio" name="boolean" value="all terms">exact<br></td><td><input type="submit" value="Search" name="submitbutton" class="stbutton"><br></td></tr></tbody></table></form></div>
+
+<!-- C-O -->
+<div id="contentbox" class="pageheight">
+
+<!-- C-L -->
+<div id="left-content"><div class="content-area">
+
+
+
+
+
+
+<h1 class="title2">Simple Captcha Script</h1>
+
+<h2 class="subtitle">Easy to add contact form captcha</h2>
+
+<div class="page-splits"></div>
+
+<img src="./Simple captcha script_files/pinned-free-scripts.jpg" height="108" width="108" class="float-left" alt="Sticky Note Free captcha script">
+
+<div class="text-nowrap">
+
+A <span class="black">captcha</span> is a script added to contact forms to help determine if a real human is submitting the info. It prevents bots from submitting your website forms and using them to send out spam emails through your website.
+
+
+<br><br>
+
+<span class="list-title">See Also…<br></span>
+
+<ul class="SI-list">
+
+<li> <a href="http://allwebco-templates.com/support/scripts.html">Free scripts &amp; add-ons</a>
+
+</li></ul>
+
+</div>
+
+<div class="floatclear"></div>
+
+<div class="page-splits"></div>
+
+<br>
+
+
+
+
+
+
+<span class="colortitle">How to add the captcha</span><br>
+
+The following short tutorial, with copy and paste code, will show you how to add the following form validation script to your HTML forms. This captcha generates a random number using Javascript and does not use images. You can edit the colors in the css code.
+
+<br><br>
+
+
+
+
+<!-- START EXAMPLE CAPTCHA FORM -->
+<form onsubmit="return checkform(this);" class="formmargin">
+
+<div class="capbox">
+
+<div id="CaptchaDiv">54737</div>
+
+<div class="capbox-inner">
+Type the above number:<br>
+
+<input type="hidden" id="txtCaptcha" value="54737">
+<input type="text" name="CaptchaInput" id="CaptchaInput" size="15"><br>
+
+</div>
+</div>
+<br>
+
+<br>
+
+<input type="submit" value="Test Captcha"><br>
+
+</form>
+<!-- END EXAMPLE CAPTCHA FORM -->
+
+
+
+
+<!-- START CAPTCHA SCRIPT -->
+
+<script type="text/javascript">
+
+// Captcha Script
+
+function checkform(theform){
+var why = "";
+
+if(theform.CaptchaInput.value == ""){
+why += "- Please Enter CAPTCHA Code.\n";
+}
+if(theform.CaptchaInput.value != ""){
+if(ValidCaptcha(theform.CaptchaInput.value) == false){
+why += "- The CAPTCHA Code Does Not Match.\n";
+}
+}
+if(why != ""){
+alert(why);
+return false;
+}
+}
+
+var a = Math.ceil(Math.random() * 9)+ '';
+var b = Math.ceil(Math.random() * 9)+ '';
+var c = Math.ceil(Math.random() * 9)+ '';
+var d = Math.ceil(Math.random() * 9)+ '';
+var e = Math.ceil(Math.random() * 9)+ '';
+
+var code = a + b + c + d + e;
+document.getElementById("txtCaptcha").value = code;
+document.getElementById("CaptchaDiv").innerHTML = code;
+
+// Validate input against the generated number
+function ValidCaptcha(){
+var str1 = removeSpaces(document.getElementById('txtCaptcha').value);
+var str2 = removeSpaces(document.getElementById('CaptchaInput').value);
+if (str1 == str2){
+return true;
+}else{
+return false;
+}
+}
+
+// Remove the spaces from the entered and generated code
+function removeSpaces(string){
+return string.split(' ').join('');
+}
+</script>
+
+<!-- END CAPTCHA SCRIPT -->
+
+
+
+
+<br>
+
+In our example above, if the correct number is entered in the form, you will be rewarded with a new number to enter. Exciting? Yes. But if you add this to your HTML form page it has a more practical use to prevent auto form submit bots.
+
+<br><br><br>
+
+<span class="colortitle">Before you start</span><br>
+
+It is very important to do all 4 steps on this page, and also <span class="red">test your form</span> after you add the code below. <span class="red">Make backups</span> of your HTML page and CSS file before you start!
+
+<br><br><br>
+
+<span class="colortitle">Step 1.) Add css code</span><br>
+
+Copy the following code and add it to the bottom of your CSS file like the "style.css" or "coolstyle.css". If you do not have a global css file you can add it to the &lt;head&gt; of your HTML page <span class="black">only</span> if you include &lt;style&gt; opening and closing tags. View the source code of this page to see how it's used in the &lt;head&gt; section.
+
+<br><br>
+
+<form name="selecting1" class="formmargin">
+<input onclick="copyit(&#39;selecting1.copyselect1&#39;)" type="button" value="Click to select all (also copies in IE)" name="copybutton" class="selectcopy"><br>
+<textarea name="copyselect1" rows="16" cols="62" class="textareacode">.capbox {
+	background-color: #92D433;
+	border: #B3E272 0px solid;
+	border-width: 0px 12px 0px 0px;
+	display: inline-block;
+	*display: inline; zoom: 1; /* FOR IE7-8 */
+	padding: 8px 40px 8px 8px;
+	}
+
+.capbox-inner {
+	font: bold 11px arial, sans-serif;
+	color: #000000;
+	background-color: #DBF3BA;
+	margin: 5px auto 0px auto;
+	padding: 3px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	}
+
+#CaptchaDiv {
+	font: bold 17px verdana, arial, sans-serif;
+	font-style: italic;
+	color: #000000;
+	background-color: #FFFFFF;
+	padding: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	}
+
+#CaptchaInput { margin: 1px 0px 1px 0px; width: 135px; }
+</textarea>
+</form>
+
+<br><br>
+
+<span class="colortitle">Step 2.) Add captcha box</span><br>
+
+Copy the following code and add it to the main body of your HTML page inside the form between the &lt;form&gt; start and &lt;/form&gt; end tags. Add this code where you want the captcha box to appear, usually just above the <span class="black">&lt;submit&gt;</span> button.<br>
+
+<br>
+
+<form name="selecting2" class="formmargin">
+<input onclick="copyit(&#39;selecting2.copyselect2&#39;)" type="button" value="Click to select all (also copies in IE)" name="copybutton" class="selectcopy"><br>
+<textarea name="copyselect2" rows="16" cols="62" class="textareacode">&lt;!-- START CAPTCHA --&gt;
+&lt;br&gt;
+&lt;div class="capbox"&gt;
+
+&lt;div id="CaptchaDiv"&gt;&lt;/div&gt;
+
+&lt;div class="capbox-inner"&gt;
+Type the above number:&lt;br&gt;
+
+&lt;input type="hidden" id="txtCaptcha"&gt;
+&lt;input type="text" name="CaptchaInput" id="CaptchaInput" size="15"&gt;&lt;br&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;!-- END CAPTCHA --&gt;
+</textarea>
+</form>
+
+<br><br>
+
+<span class="colortitle">Step 3.) Add form function</span><br>
+
+The code in the box below is added to your &lt;form&gt; action line as in this example:
+
+<br><br>
+
+<span class="code">
+&lt;form method="post" action="http://your-web-domain.com/cgi-bin/formmail.cgi" <span class="red">onsubmit="return checkform(this);</span>"&gt;
+</span>
+
+<br><br>
+
+<form name="selecting3" class="formmargin">
+<input onclick="copyit(&#39;selecting3.copyselect3&#39;)" type="button" value="Click to select all (also copies in IE)" name="copybutton" class="selectcopy"><br>
+<textarea name="copyselect3" rows="2" cols="62" class="textareacode"> onsubmit="return checkform(this);"
+</textarea>
+</form>
+
+<br>
+
+<span class="red">Note:</span> View the source code of this page if you are not sure how to add the above code.
+
+<br><br><br>
+
+<span class="colortitle">Step 4.) Add Javascript</span><br>
+Copy the code below and paste it just after the end of your form. Paste it just after the &lt;/form&gt; closing tag. Do <span class="red">not</span> add this code in the HTML page head section.
+
+<br><br>
+
+<form name="selecting4" class="formmargin">
+<input onclick="copyit(&#39;selecting4.copyselect4&#39;)" type="button" value="Click to select all (also copies in IE)" name="copybutton" class="selectcopy"><br>
+<textarea name="copyselect4" rows="16" cols="62" class="textareacode">&lt;script type="text/javascript"&gt;
+
+// Captcha Script
+
+function checkform(theform){
+var why = "";
+
+if(theform.CaptchaInput.value == ""){
+why += "- Please Enter CAPTCHA Code.\n";
+}
+if(theform.CaptchaInput.value != ""){
+if(ValidCaptcha(theform.CaptchaInput.value) == false){
+why += "- The CAPTCHA Code Does Not Match.\n";
+}
+}
+if(why != ""){
+alert(why);
+return false;
+}
+}
+
+var a = Math.ceil(Math.random() * 9)+ '';
+var b = Math.ceil(Math.random() * 9)+ '';
+var c = Math.ceil(Math.random() * 9)+ '';
+var d = Math.ceil(Math.random() * 9)+ '';
+var e = Math.ceil(Math.random() * 9)+ '';
+
+var code = a + b + c + d + e;
+document.getElementById("txtCaptcha").value = code;
+document.getElementById("CaptchaDiv").innerHTML = code;
+
+// Validate input against the generated number
+function ValidCaptcha(){
+var str1 = removeSpaces(document.getElementById('txtCaptcha').value);
+var str2 = removeSpaces(document.getElementById('CaptchaInput').value);
+if (str1 == str2){
+return true;
+}else{
+return false;
+}
+}
+
+// Remove the spaces from the entered and generated code
+function removeSpaces(string){
+return string.split(' ').join('');
+}
+&lt;/script&gt;
+</textarea>
+</form>
+
+<br><br><br>
+
+<span class="colortitle">Troubleshooting:</span><br>
+
+<ul class="list listpad5">
+
+<li> If the form is not working, do the steps above on this page again.
+
+</li><li> If the CSS code is not adding the proper colors and alignment, try adding the code near the top (not above the Google fonts or body css) or near the bottom of the CSS file, and then <a href="http://allwebco-templates.com/support/S_errors.htm">error check</a> your CSS file.
+
+</li><li> Form is not working or looks broken: Try re-copying the code above and be sure you have copied every line of the code in the boxes.
+
+</li></ul>
+
+<br><br><br>
+
+<span class="smalltitle">Related Topics:</span><br>
+<a href="http://allwebco-templates.com/support/S_contact_form_quick.htm">Contact Form Setup</a><br>
+<a href="http://allwebco-templates.com/support/scripts.html">Free Scripts and Plug-ins</a><br>
+
+<br>
+
+
+
+
+
+
+<br><br>
+
+</div></div>
+<!-- C-L -->
+
+
+
+
+
+
+<!-- START SIDEBAR -->
+
+<div id="sidebar-content" class="SB-background"><div class="content-sidebar">
+
+<script type="text/javascript" src="./Simple captcha script_files/sidebar-support.js.download"></script><a href="http://allwebco-templates.com/HTML-web-templates/Responsive-Mega-Menu.html"><img src="./Simple captcha script_files/sidebar-1.jpg" height="300" width="240" alt="Mega Menu Website Templates"></a><br>
+
+<br>
+
+<div class="sidebox sbw-2"><div class="sb-pad">
+
+<a href="http://allwebco-templates.com/support/S_tables_HTML5-chart.htm">Build a Table Tutorial</a><br>
+
+<a href="http://allwebco-templates.com/support/S_sidebar_add.htm">Add a Sidebar Tutorial</a><br>
+
+<a href="http://allwebco-templates.com/support/S_add_div.htm">Css Locate DIV Tutorial</a><br>
+
+<a href="http://allwebco-templates.com/support/S_menus_dropdown.htm">Selector Menu Tutorial</a><br>
+
+<div class="sideon">Captcha Form Script<br></div>
+
+<a href="http://allwebco-templates.com/support/S-sticky-header.htm">Sticky Header</a><br>
+
+<a href="http://allwebco-templates.com/support/S_slideshow_new.htm">Mini Responsive Slideshow</a><br>
+
+<a href="http://allwebco-templates.com/support/S_script_ticker.htm">CSS3 Scrolling Ticker</a><br>
+
+<a href="http://allwebco-templates.com/support/S_script_favicon.htm">Favicon in the Address Bar</a><br>
+
+<a href="http://allwebco-templates.com/support/S_menus_sub.htm">Adding Drop Menus</a><br>
+
+<div class="sidebox-split"></div>
+
+<a href="http://allwebco-templates.com/support/scripts.html">Scripts &amp; Add-ons</a><br>
+
+</div></div>
+
+<br>
+
+<div class="sidebox sb-notes sbw-2"><div class="sb-pad sb-pad-notes">
+Make backups of your template files before you start editing, and also make backups every few edits.<br>
+</div></div>
+
+<br>
+
+<!-- START GOOGLY ADS -->
+<div class="googleads gaw-2">
+
+<div class="ga">
+<a href="http://allwebco-templates.com/HTML-web-templates/Responsive-Mega-Menu.html" class="GOOGLElink">Mega Menu CEO</a>
+HTML website templates. Downloadable design for professionals.<br>
+</div>
+
+<div class="ga">
+<a href="http://allwebcodesign.com/website-templates/S06-Bizzy-drop-menus.htm" class="GOOGLElink">Business Layouts</a>
+HTML designs with contact and quotes forms for small business.<br>
+</div>
+
+<div class="ga">
+<a href="http://allwebcodesign.com/themes-drop-menus.html" class="GOOGLElink">Drop Down Menu Themes</a>
+View different developer grade themes and layouts for HTML web templates.<br>
+</div>
+
+<div class="ga">
+<a href="http://allwebcodesign.com/" class="GOOGLElink">Allwebco Design Corporation</a>
+Stand alone HTML and CSS design templates. Responsive and mobile version integration.<br>
+</div>
+
+<div class="googleadsft">&nbsp;<br></div></div>
+<!-- END GOOGLY ADS -->
+
+
+
+<br>
+
+</div></div>
+<!-- S-B -->
+
+
+<!-- CLEAR FLOATS -->
+<div class="floatclear"></div>
+
+
+</div>
+<!-- C-O -->
+
+
+<div id="page-counter">
+<script type="text/javascript" src="./Simple captcha script_files/XXXcaptcha.cnt"></script><img src="./Simple captcha script_files/6.gif"><img src="./Simple captcha script_files/1.gif"><img src="./Simple captcha script_files/8.gif"><img src="./Simple captcha script_files/2.gif">
+</div>
+
+<script type="text/javascript" src="./Simple captcha script_files/footer-support.js.download"></script><div class="counterlink printhide" onclick="javascript:toggleDiv(&#39;page-counter&#39;);">&nbsp;</div><div id="footer-box" class="printhide"><div class="footer-line"></div><div class="footer-content"><span class="footer-title">COMPANY</span><br><a href="http://www.allwebco-templates.com/support/">Support Home</a><br><a href="http://allwebco-templates.com/support/contact_new_download.html">Download Request</a><br><a href="http://allwebcodesign.com/" rel="nofollow">Web Templates</a><br><a href="http://allwebco-templates.com/support/S_contact_us.htm">Contact</a><br></div><div class="footer-content"><span class="footer-title">SUPPORT</span><br><a href="http://www.allwebco-templates.com/support/scripts.html">Scripts &amp; Add-Ons</a><br><a href="http://www.allwebco-templates.com/support/S_getting_started.htm">Getting Started</a><br><a href="http://www.allwebco-templates.com/support/S_editing-tricks.htm">Editing Tips</a><br><a href="http://www.allwebco-templates.com/support/S_search_engines.htm">SEO Help</a><br></div><div class="footer-right"><a href="http://allwebcodesign.com/" rel="nofollow"><img src="./Simple captcha script_files/allwebco88x31-footer.gif" width="88" height="31" class="footer-icon" alt="Allwebco Design Corporation"></a><br><a href="http://allwebcodesign.com/privacy.htm" rel="nofollow"><img src="./Simple captcha script_files/nospam-88x31-2.gif" width="88" height="31" class="footer-icon" alt="No Spam Policy"></a><br><a href="http://allwebco-templates.com/support/search.html"><img src="./Simple captcha script_files/icon-search.png" width="36" height="36" class="footer-icon" alt="Search"></a><br></div><div class="floatclear"></div><div class="copyright">Copyright © 2016 <a href="http://allwebcodesign.com/" rel="nofollow">Allwebco Design Corporation</a> All rights reserved. | <a href="http://allwebco-templates.com/support/terms-of-use.htm">Terms of Use</a> | <a href="http://allwebcodesign.com/privacy.htm" rel="nofollow">Privacy Policy</a><br></div></div>
+
+</div>
+
+
+<span style="border-radius: 3px; text-indent: 20px; width: auto; padding: 0px 4px 0px 0px; text-align: center; font-style: normal; font-variant: normal; font-weight: bold; font-stretch: normal; font-size: 11px; line-height: 20px; font-family: &quot;Helvetica Neue&quot;, Helvetica, sans-serif; color: rgb(255, 255, 255); background: url(&quot;data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMzBweCIgd2lkdGg9IjMwcHgiIHZpZXdCb3g9Ii0xIC0xIDMxIDMxIj48Zz48cGF0aCBkPSJNMjkuNDQ5LDE0LjY2MiBDMjkuNDQ5LDIyLjcyMiAyMi44NjgsMjkuMjU2IDE0Ljc1LDI5LjI1NiBDNi42MzIsMjkuMjU2IDAuMDUxLDIyLjcyMiAwLjA1MSwxNC42NjIgQzAuMDUxLDYuNjAxIDYuNjMyLDAuMDY3IDE0Ljc1LDAuMDY3IEMyMi44NjgsMC4wNjcgMjkuNDQ5LDYuNjAxIDI5LjQ0OSwxNC42NjIiIGZpbGw9IiNmZmYiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIxIj48L3BhdGg+PHBhdGggZD0iTTE0LjczMywxLjY4NiBDNy41MTYsMS42ODYgMS42NjUsNy40OTUgMS42NjUsMTQuNjYyIEMxLjY2NSwyMC4xNTkgNS4xMDksMjQuODU0IDkuOTcsMjYuNzQ0IEM5Ljg1NiwyNS43MTggOS43NTMsMjQuMTQzIDEwLjAxNiwyMy4wMjIgQzEwLjI1MywyMi4wMSAxMS41NDgsMTYuNTcyIDExLjU0OCwxNi41NzIgQzExLjU0OCwxNi41NzIgMTEuMTU3LDE1Ljc5NSAxMS4xNTcsMTQuNjQ2IEMxMS4xNTcsMTIuODQyIDEyLjIxMSwxMS40OTUgMTMuNTIyLDExLjQ5NSBDMTQuNjM3LDExLjQ5NSAxNS4xNzUsMTIuMzI2IDE1LjE3NSwxMy4zMjMgQzE1LjE3NSwxNC40MzYgMTQuNDYyLDE2LjEgMTQuMDkzLDE3LjY0MyBDMTMuNzg1LDE4LjkzNSAxNC43NDUsMTkuOTg4IDE2LjAyOCwxOS45ODggQzE4LjM1MSwxOS45ODggMjAuMTM2LDE3LjU1NiAyMC4xMzYsMTQuMDQ2IEMyMC4xMzYsMTAuOTM5IDE3Ljg4OCw4Ljc2NyAxNC42NzgsOC43NjcgQzEwLjk1OSw4Ljc2NyA4Ljc3NywxMS41MzYgOC43NzcsMTQuMzk4IEM4Ljc3NywxNS41MTMgOS4yMSwxNi43MDkgOS43NDksMTcuMzU5IEM5Ljg1NiwxNy40ODggOS44NzIsMTcuNiA5Ljg0LDE3LjczMSBDOS43NDEsMTguMTQxIDkuNTIsMTkuMDIzIDkuNDc3LDE5LjIwMyBDOS40MiwxOS40NCA5LjI4OCwxOS40OTEgOS4wNCwxOS4zNzYgQzcuNDA4LDE4LjYyMiA2LjM4NywxNi4yNTIgNi4zODcsMTQuMzQ5IEM2LjM4NywxMC4yNTYgOS4zODMsNi40OTcgMTUuMDIyLDYuNDk3IEMxOS41NTUsNi40OTcgMjMuMDc4LDkuNzA1IDIzLjA3OCwxMy45OTEgQzIzLjA3OCwxOC40NjMgMjAuMjM5LDIyLjA2MiAxNi4yOTcsMjIuMDYyIEMxNC45NzMsMjIuMDYyIDEzLjcyOCwyMS4zNzkgMTMuMzAyLDIwLjU3MiBDMTMuMzAyLDIwLjU3MiAxMi42NDcsMjMuMDUgMTIuNDg4LDIzLjY1NyBDMTIuMTkzLDI0Ljc4NCAxMS4zOTYsMjYuMTk2IDEwLjg2MywyNy4wNTggQzEyLjA4NiwyNy40MzQgMTMuMzg2LDI3LjYzNyAxNC43MzMsMjcuNjM3IEMyMS45NSwyNy42MzcgMjcuODAxLDIxLjgyOCAyNy44MDEsMTQuNjYyIEMyNy44MDEsNy40OTUgMjEuOTUsMS42ODYgMTQuNzMzLDEuNjg2IiBmaWxsPSIjYmQwODFjIj48L3BhdGg+PC9nPjwvc3ZnPg==&quot;) 3px 50% / 14px 14px no-repeat rgb(189, 8, 28); position: absolute; opacity: 1; z-index: 8675309; display: none; cursor: pointer; border: none; -webkit-font-smoothing: antialiased; top: 146px; left: 813px;">Save</span></body></html>
