@@ -36,6 +36,8 @@
 <meta name="msapplication-TileImage" content="icons/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
 
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    
 </head>
 <body>
 	<script>
@@ -90,11 +92,27 @@
               data-show-faces="true">
             </div>
 			<div class="clearfix"></div>
-            <p class= "beta_invitation">Join our iOS beta team! <br> Just include "iOS beta" in the Subject line below.</p>
+            <p class= "beta_invitation">Join our iOS beta team! <br> Just include 'iOS beta' <br> in the Subject line below.</p>
 
-			<div class="contact-form">
-				<script type="text/javascript"> id = 192553; clr = "ed8c35-ffffff--"; </script><script type="text/javascript" src="http://kontactr.com/wp.js"></script>
-			</div>
+			<form id="contactForm" method="POST" action="http://formspree.io/info@qalang.com">
+                <p>Name</p>
+                <input type="name" name="name" placeholder="Your name">
+                <p>email Address</p>
+			  <input type="email" name="email" placeholder="Your email">
+                <p>Subject</p>
+			  <input type="subject" name="subject" placeholder="Subject">
+                <p>Message</p>
+			  <textarea name="message" placeholder="Your message"></textarea>
+                <!-- START reCAPTCHA -->
+                    <button
+                    id="invisibleButton"
+                    class="g-recaptcha"
+                    data-sitekey="6LcAoRcUAAAAACezD8S8OpUWBF40jtvvCijVED-C"
+                    data-callback="submit"></button>
+                <!-- END reCAPTCHA -->
+
+			  <button type="submit">Send</button>
+			</form>
 		
 		</div>
 	</div>

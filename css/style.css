@@ -1188,5 +1188,15 @@ ol.faqList {
 #contactForm {
 	position: relative;
 	display: inline-block;
-	color: orange;
+	color: black;
+	font-size: 100%;
+	background-color: #ed8c35;
+	padding: 1em;
+	text-align: left;
+	text-indent: -10px;
+	margin-left: 10px;
+    border-radius: 5px;
+}
+#invisibleButton {
+    background: invisible;
 }

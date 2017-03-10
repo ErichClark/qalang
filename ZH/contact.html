@@ -1,8 +1,8 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="zh-Hant-TW">
 
 <head>
-<title>Contact Qalang</title>
+<title>聯絡我們</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Qalang, Halus, Android Game, iOS Game, Atayal, Taiwan, Tayan" />
@@ -13,7 +13,7 @@
 <link href="../css/style.css" rel='stylesheet' type='text/css' />
 <!-- Custom Theme files -->
 <!--webfont-->
-<script type="../text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
 <!--webfont-->
 <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 
@@ -36,6 +36,8 @@
 <meta name="msapplication-TileImage" content="../icons/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
 
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    
 </head>
 <body>
 	<script>
@@ -67,15 +69,15 @@
 					<div class="menu">
 						<a class="toggleMenu" href="#"><img src="../images/nav.png" alt="" /></a>
 						<ul class="nav" id="nav">
-							<li><a href="index.html">Hot Stone</a></li>
-							<li><a href="story.html">Story</a></li>
+							<li><a href="index.html">熱石</a></li>
+							<li><a href="story.html">故事</a></li>
 							<!--<li><a href="art.html">Art</a></li>-->
-							<li><a href="aboutQalang.html">About Us</a></li>
-							<li class="active"><a href="contact.html">Contact Us</a></li>
-							<li><a href="faq.html">FAQ</a></li>
-							<li><br><a href="privacyPolicy.html" class="littleLink">Privacy</a></li>
-							<li><a href="termsOfService.html" class="littleLink">Terms</a></li>
-							<li><a href="../contact.html" class="littleLink">US</a></li>
+							<li><a href="aboutQalang.html">關於我們</a></li>
+							<li class="active"><a href="contact.html">聯絡我們</a></li>
+							<li><a href="faq.html">問答集</a></li>
+							<li><br><a href="privacyPolicy.html" class="littleLink">隱私</a></li>
+							<li><a href="termsOfService.html" class="littleLink">術語</a></li>	
+							<li><a href="../aboutQalang.html" class="littleLink">US</a></li>
 						</ul>
 						<script type="text/javascript" src="../js/responsive-nav.js"></script>
                         
@@ -90,11 +92,26 @@
               data-show-faces="true">
             </div>
 			<div class="clearfix"></div>
-            <p class= "beta_invitation">Join our iOS beta team! <br> Just include "iOS beta" in the Subject line below.</p>
+            <p class= "beta_invitation">歡迎加入 iOS 系統團隊 <br> 只要再項目下方加入"iOS beta"</p>
 
-			<div class="contact-form">
-				<script type="text/javascript"> id = 192553; clr = "ed8c35-ffffff--"; </script><script type="text/javascript" src="http://kontactr.com/wp.js"></script>
-			</div>
+			<form id="contactForm" method="POST" action="http://formspree.io/info@qalang.com">
+                <p>姓名</p>
+                <input type="name" name="name" placeholder="姓名">
+                <p>電子郵件</p>
+			  <input type="email" name="email" placeholder="電子郵件">
+                <p>項目</p>
+			  <input type="subject" name="subject" placeholder="項目">
+                <p>訊息</p>
+			  <textarea name="message" placeholder="訊息"></textarea>
+                <!-- START reCAPTCHA -->
+                    <button
+                    class="g-recaptcha"
+                    data-sitekey="6LcAoRcUAAAAACezD8S8OpUWBF40jtvvCijVED-C"
+                    data-callback="submit"></button>
+                <!-- END reCAPTCHA -->
+
+			  <button type="submit">傳送</button>
+			</form>
 		
 		</div>
 	</div>
