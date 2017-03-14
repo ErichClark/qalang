@@ -1200,3 +1200,38 @@ ol.faqList {
 #invisibleButton {
     background: invisible;
 }
+p.legalBold {
+	font-weight: bold;
+}
+#legalBody {
+	font-size: 100%;
+}
+ul.legalList {
+	list-style-position: inside;
+}
+h3.legalTitle {
+	position: centered;
+	font-weight: bold;
+}
+#legalCentered {
+	position: center;
+}
+#privacyPolicy {
+	font-family: serif;
+	position: relative;
+	display: block;
+	color: black;
+	font-size: 100%;
+	background-color: white;
+	padding: 1em;
+	text-align: left;
+    border-radius: 5px;
+	margin-bottom: 5em;
+}
+ul.legalList {
+	font-family: serif;
+	text-indent: 4em;
+}
+#legalCentered {
+	position: center;
+}
