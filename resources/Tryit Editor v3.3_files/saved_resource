@@ -1,29 +1,0 @@
-
-var ftGUID_2335556="29338818762742";
-var ftConfID_2335556="0";
-var ftParams_2335556="ftx=&fty=&ftadz=&ftscw=&ft_custom=144962642&ftOBA=1&ft_ifb=1&ft_domain=www.w3schools.com&ft_agentEnv=0&ft_referrer=https%3A%2F%2Fwww.w3schools.com%2Fcss%2Ftryit.asp%3Ffilename%3Dtrycss_forms&ft_keyword=__2837948__&ft_section=144962642__AMsySZYWzX-hJde57f9gLxcQnok4__43752642798679689650680507876030833662&cachebuster=565194.6212513421";
-var ftKeyword_2335556="";
-var ftCustom_2335556="144962642";
-var ftSection_2335556="144962642__AMsySZYWzX-hJde57f9gLxcQnok4__43752642798679689650680507876030833662";
-var ftSegment_2335556="igl,gx2,hfo,hho,hfs,hqg,hyu,hfp,hfq,hh1,hh9,fe6,jpa,kr5,f5c,f5c323804900,f5d,f5d323804900,f5e,f5e323804900,kju,g6j,fuo,bi7,bi7_SFO,bot,j36,hqf,hhd,k58en_US,g2e,g2e69247,g2l_176b,g2f,g2f69247,hh114703,hh9598453_598453,hho373764,gd13c02,n7a";
-var ftSegmentList_2335556=[{s:'igl'},{s:'gx2'},{s:'hfo'},{s:'hho',t:31160000},{s:'hfs'},{s:'hqg'},{s:'hyu'},{s:'hfp'},{s:'hfq'},{s:'hh1',t:31160000},{s:'hh9',t:31160000},{s:'fe6'},{s:'jpa'},{s:'kr5'},{s:'f5c'},{m:'f5c_view',s:'f5c323804900'},{s:'f5d'},{m:'f5d_cart',s:'f5d323804900'},{s:'f5e'},{m:'f5e_purchase',s:'f5e323804900'},{s:'kju'},{m:'dflt',s:'g6j'},{s:'fuo'},{s:'bi7'},{m:'origdest',s:'bi7_SFO'},{s:'bot'},{s:'j36'},{s:'hqf'},{m:'hhd_v',s:'hhd'},{m:'k58_v',s:'k58en_US'},{s:'g2e'},{m:'g2e_v',s:'g2e69247'},{m:'g2l',s:'g2l_176b'},{s:'g2f'},{m:'g2f_c',s:'g2f69247'},{m:'hh1_category',s:'hh114703',t:31160000},{m:'hh9_search',s:'hh9598453_598453',t:31160000},{m:'hho_view',s:'hho373764',t:31160000},{m:'gd1',s:'gd13c02',t:31330000},{s:'n7a'}];
-var ftRuleMatch_2335556="00100000";
-var ftTimestamp_2335556="1488692922";
-var ftGeoC2_2335556="us";
-var ftGeoState_2335556="ma";
-var ftGeoCity_2335556="rowley";
-var ftISP_2335556="mci communications services inc. dba verizon business";
-var ftSpeed_2335556="broadband";
-var ftDMA_2335556="506";
-var ftLong_2335556="-70.8985";
-var ftLat_2335556="42.7211";
-var ftPostal_2335556="01969";
-var ftTimeZone_2335556="-500";
-var ftMobileCarrier_2335556="";
-var ftImp2335556 = {};
-ftImp2335556.privacy = "x";
-ftImp2335556.guidAge = "418";
-ftImp2335556.impID = "3351DDF2847AB4";
-
-document.write('<scr'+'ipt src="https://cdn.flashtalking.com/xre/233/2335556/1721655/js/j-2335556-1721655.js" id="ftscript_m2335556" name="ftscript_m2335556"></scr'+'ipt>');
-                    

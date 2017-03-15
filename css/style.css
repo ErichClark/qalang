@@ -1200,8 +1200,10 @@ ol.faqList {
 #invisibleButton {
     background: invisible;
 }
+span.legalBold,
 p.legalBold {
 	font-weight: bold;
+    padding: 1em;
 }
 #legalBody {
 	font-size: 100%;
@@ -1216,7 +1218,7 @@ h3.legalTitle {
 #legalCentered {
 	position: center;
 }
-#privacyPolicy {
+#legalPage {
 	font-family: serif;
 	position: relative;
 	display: block;
@@ -1228,10 +1230,25 @@ h3.legalTitle {
     border-radius: 5px;
 	margin-bottom: 5em;
 }
+.legalPage a:hover {
+    color: blue;
+}
+ol.legalList,
 ul.legalList {
 	font-family: serif;
-	text-indent: 4em;
+	text-indent: 1em;
 }
 #legalCentered {
 	position: center;
+}
+span.legalItalic {
+    font-style: italic;
+}
+p.legalBoldItalic,
+span.legalBoldItalic {
+    font-style: italic;
+    font-weight: bold;
+}
+span.legalUnderline {
+    text-decoration: underline;
 }
