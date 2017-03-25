@@ -68,7 +68,7 @@ body a{
 }
 .toggleMenu {
     display:  none;
-  	padding:4px 5px 0px 5px;
+  	padding:4px 5px 0px 205px;
 }
 
 .nav:before,
@@ -971,7 +971,7 @@ ul.phone {
 	float:left;
 }
 .header {
-	text-align: right;
+	text-align: left;
 	min-height: 250px;
 }
 .header_bottom h1 {
