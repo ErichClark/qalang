@@ -1252,3 +1252,26 @@ span.legalBoldItalic {
 span.legalUnderline {
     text-decoration: underline;
 }
+
+span.comicNav {
+	display: inline;
+	width: 960px;
+}
+
+a.comicNav {
+	padding-right: 191px;
+    display: inline;
+    color: white;
+    padding: none ;
+    text-decoration: none;
+	font-size: 30px;
+	position: relative;
+}
+a.comicNavRight {
+	color: white;
+	font-size: 30px;
+	text-decoration: none;
+}
+li.comicNav a:hover {
+    background-color: #111;
+}
